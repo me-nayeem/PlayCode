@@ -1,8 +1,34 @@
 # PlayCode
 
-# **Not just problem-solving — but solving with fun, flow, challenge, and joy**
+### **Not just problem-solving — but solving with fun, flow, challenge, and joy**
 
+## 🎯 Purpose of This Project
 
+In today’s tech world, problem-solving is one of the most important and in-demand skills. While AI can handle repetitive tasks, boilerplate code, and many other operations in seconds, the true value lies in your problem-solving abilities.  
+
+As someone who loves both coding and gaming, I wanted to create an environment where learning and fun go hand-in-hand. This app transforms traditional problem-solving into a **game-like experience**, making it engaging and exciting.  
+
+**Players can:**  
+
+      1. Solve coding problems with joy and challenge  
+         
+      2. Compete against opponents in time-based problem-solving contests  
+         
+      3. Earn XP, track progress, and see leaderboard rankings  
+         
+      4. Redeem prizes and unlock rewards  
+         
+      5. Build connections and collaborate with fellow coders  
+         
+      6. Interact with the community and learn from peers  
+         
+      7. Improve time management and enhance problem-solving skills  
+
+      and more..........
+
+In short, this platform combines **learning, gaming, and community** to help coders sharpen their skills while having fun! 🚀
+
+---
 A modern problem-solving & coding practice platform built with **Node.js (Express)** and **vanilla HTML/CSS/JS**.  
 The goal is to create a **unique, learner-friendly coding experience** with features like hints, analytics, and gamification.  
 
@@ -21,11 +47,6 @@ The goal is to create a **unique, learner-friendly coding experience** with feat
 - **Frontend**: HTML, CSS, JavaScript (no React for now)  
 - **Database**: MongoDB  
 - **CI/CD**: GitHub Actions (to be added)  
-
----
-
-## 📂 Project Structure (Starter Skeleton)
-Will be added time to time...
 
 ---
 
@@ -86,6 +107,34 @@ Will be added time to time...
     🎯 Personalized learning paths
     
     🤖 Advanced analytics with AI-based recommendations
+
+---
+
+## 📂 Project Structure (Starter Skeleton)
+
+        PlayCode/
+        ├── 📁 backend/
+        │ └── 📁 src/
+        │ ├── 📁 controllers/ # Handles application logic
+        │ ├── 📁 models/ # Database models
+        │ ├── 📁 public/ # Static files (CSS, JS, images)
+        │ ├── 📁 routes/ # API or web routes
+        │ ├── 📁 utils/ # Helper functions and utilities
+        │ └── 📁├── views/ # Frontend templates
+        │ │       ├── 📁 contest/ # Contest-related pages
+        │ │       ├── 📁 dashboard/ # Dashboard pages
+        │ │       ├── 📁 home/ # Homepage views
+        │ │       ├── 📁 leaderboardPage/ # Leaderboard pages
+        │ │       ├── 📁 partials/ # Reusable UI components
+        │ │       ├── 📁 playPage/ # Game/play pages
+        │ │       ├── 📁 problemPage/ # Problem pages
+        │ │       └── 📁 store/ # Store pages
+        │ ├── 📄 index.js
+        │ ├── 📄 .env.example
+        ├── 📁 frontend/ # React / HTML / CSS frontend (frontend is not add till now)
+        ├── 📄 .gitignore # Git ignore file
+        ├── 📄 LICENSE # Project license
+        ├── 📄 README.md # Project documentation
 
 ---
 
