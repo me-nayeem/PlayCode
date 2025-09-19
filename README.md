@@ -165,6 +165,9 @@ The goal is to create a **unique, learner-friendly coding experience** with feat
 
 <img src="backend/assets/images/PlayCodeHome.png" alt="PlayCode Home" width="750"/>
 
+## Dashboard:
+
+<img src="backend/assets/images/Dashboard.png" alt="PlayCode Dashboard" width="750"/>
 
 # 🤝 Contributing
 
