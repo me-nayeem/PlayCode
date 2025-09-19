@@ -32,17 +32,40 @@ In short, this platform combines **learning, gaming, and community** to help cod
 A modern problem-solving & coding practice platform built with **Node.js (Express)** and **vanilla HTML/CSS/JS**.  
 The goal is to create a **unique, learner-friendly coding experience** with features like hints, analytics, and gamification.  
 
-## 📌 Features (Planned)
-- 🧩 **Progressive Hints** – Step-by-step guidance (concept → pseudo-code → solution).  
-- 📊 **Personalized Analytics** – Track strengths/weaknesses across topics.  
-- 🎮 **Gamification** – XP, streaks, badges, and challenges.    
-- 📚 **Study Planner** – University-course-based practice roadmap.  
-- 🏆 **Community Explanations** – Upvotable hints and tutorials.  
-- 🌙 **Minimalist UI** – Distraction-free coding environment.  
+# 🚀 PlayCode — Level Up Your Coding Skills with Fun!
+
+## Key Features
+
+      🧩 Step-by-Step Hints – Learn progressively from concept → pseudo-code → solution
+      
+      📊 Personalized Analytics – Track your strengths, weaknesses, and progress
+      
+      🎮 Gamified Experience – Earn XP, streaks, badges, and complete challenges
+      
+      📚 Study Planner – Follow a roadmap based on your university courses
+      
+      🏆 Community Explanations – Upvote hints, share tutorials, and learn together
+      
+      🌙 Minimalist UI – Focused, distraction-free coding environment
+
+**Compete & Connect**
+
+      🥇 Leaderboard & Rankings – See your global and weekly position
+      
+      👥 Play Game Mode – Challenge opponents in real-time coding games
+      
+      🎫 Contests Participation – Join timed contests, compete, and earn rewards
+
+**Earn & Unlock**
+
+      🛍️ Store & Rewards – Redeem prizes, unlock themes, badges, and boosts
+      
+      🏅 Achievements – Collect badges for milestones, streaks, and wins
 
 ---
 
 ## 🏗️ Tech Stack
+
 - **Backend**: Node.js, Express  
 - **Frontend**: HTML, CSS, JavaScript (no React for now)  
 - **Database**: MongoDB  
@@ -141,10 +164,6 @@ The goal is to create a **unique, learner-friendly coding experience** with feat
 # 🤝 Contributing
 
 Contributions are welcome! Please fork this repo, make a feature branch, and open a pull request.
-
-# 📜 License
-
-This project is licensed under the MIT License.
 
 ---
 
