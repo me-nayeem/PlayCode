@@ -158,3 +158,6 @@ This project is licensed under the MIT License.
   Linkedin: [MD. Nayeem Islam](https://www.linkedin.com/in/nayeem-ahmed100/)
 
   GitHub: [me-nayeem](https://github.com/me-nayeem)
+
+© 2025 MD. Nayeem Islam. All rights reserved.
+**This project is proprietary. You may view and learn from the code, but you may not copy, modify, distribute, or use it commercially without explicit permission.**
