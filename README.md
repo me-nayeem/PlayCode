@@ -161,12 +161,14 @@ The goal is to create a **unique, learner-friendly coding experience** with feat
 
 ---
 
-## Home:
+## Home:  
 
+(It might seem a bit dense in the mockup, but the actual page will feel clean, fresh, and easy to navigate.)
 <img src="backend/assets/images/PlayCodeHome.png" alt="PlayCode Home" width="750"/>
 
 ## Dashboard:
 
+(It might seem a bit dense in the mockup, but the actual page will feel clean, fresh, and easy to navigate.)
 <img src="backend/assets/images/Dashboard.png" alt="PlayCode Dashboard" width="750"/>
 
 # 🤝 Contributing
