@@ -138,20 +138,20 @@ The goal is to create a **unique, learner-friendly coding experience** with feat
         PlayCode/
         ├── 📁 backend/
         │ └── 📁 src/
-        │ ├── 📁 controllers/ # Handles application logic
-        │ ├── 📁 models/ # Database models
-        │ ├── 📁 public/ # Static files (CSS, JS, images)
-        │ ├── 📁 routes/ # API or web routes
-        │ ├── 📁 utils/ # Helper functions and utilities
-        │ └── 📁├── views/ # Frontend templates
-        │ │       ├── 📁 contest/ # Contest-related pages
-        │ │       ├── 📁 dashboard/ # Dashboard pages
-        │ │       ├── 📁 home/ # Homepage views
-        │ │       ├── 📁 leaderboardPage/ # Leaderboard pages
-        │ │       ├── 📁 partials/ # Reusable UI components
-        │ │       ├── 📁 playPage/ # Game/play pages
-        │ │       ├── 📁 problemPage/ # Problem pages
-        │ │       └── 📁 store/ # Store pages
+        │ │  ├── 📁 controllers/ # Handles application logic
+        │ │  ├── 📁 models/ # Database models
+        │ │  ├── 📁 public/ # Static files (CSS, JS, images)
+        │ │  ├── 📁 routes/ # API or web routes
+        │ │  ├── 📁 utils/ # Helper functions and utilities
+        │ │  └── 📁├── views/ # Frontend templates
+        │ │          ├── 📁 contest/ # Contest-related pages
+        │ │          ├── 📁 dashboard/ # Dashboard pages
+        │ │          ├── 📁 home/ # Homepage views
+        │ │          ├── 📁 leaderboardPage/ # Leaderboard pages
+        │ │          ├── 📁 partials/ # Reusable UI components
+        │ │          ├── 📁 playPage/ # Game/play pages
+        │ │          ├── 📁 problemPage/ # Problem pages
+        │ │          └── 📁 store/ # Store pages
         │ ├── 📄 index.js
         │ ├── 📄 .env.example
         ├── 📁 frontend/ # React / HTML / CSS frontend (frontend is not add till now)
