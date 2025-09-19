@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Store - PlayCode</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/store.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="#" class="logo">PlayCode</a>
+        <ul class="nav-menu">
+          <li><a href="#" class="nav-link active">Home</a></li>
+          <li><a href="#" class="nav-link">Problems</a></li>
+          <li><a href="#" class="nav-link">Contest</a></li>
+          <li><a href="#" class="nav-link">Play</a></li>
+          <li><a href="#" class="nav-link">Leaderboard</a></li>
+          <li><a href="#" class="nav-link">Store</a></li>
+        </ul>
+        <div class="auth-buttons">
+          <a href="#" class="btn btn-login">Login</a>
+          <a href="#" class="btn btn-signup">Sign Up</a>
+        </div>
+        <i class="fa-solid fa-bars" id="bar"></i>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="hero-bg"></div>
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-text">
+              <h1>PlayCode Store</h1>
+              <p>
+                Unlock your coding potential with premium problem packs,
+                exclusive boosts, and epic swag. Use your hard-earned PlayCoins
+                to level up your programming journey!
+              </p>
+              <div class="hero-stats">
+                <div class="stat-item">
+                  <div class="stat-value">50+</div>
+                  <div class="stat-label">Problem Packs</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-value">1,200+</div>
+                  <div class="stat-label">Happy Coders</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-value">24/7</div>
+                  <div class="stat-label">Instant Access</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="featured-pack">
+              <div class="featured-badge">Limited Time!</div>
+              <h3>🚀 Algorithm Master Bundle</h3>
+              <p class="product-description">
+                Complete collection of advanced algorithms with guided solutions
+                and video explanations.
+              </p>
+
+              <div class="featured-price">
+                <div class="current-price">
+                  <div class="coin-icon">$</div>
+                  <span>1,200</span>
+                </div>
+                <div class="original-price">$2,000</div>
+                <div class="discount-badge">40% OFF</div>
+              </div>
+
+              <ul class="pack-features">
+                <li><span class="check-icon">✓</span> 150+ Premium Problems</li>
+                <li><span class="check-icon">✓</span> Video Explanations</li>
+                <li><span class="check-icon">✓</span> Interview Prep Guide</li>
+                <li>
+                  <span class="check-icon">✓</span> Certificate of Completion
+                </li>
+              </ul>
+
+              <button class="redeem-btn" onclick="openModal('featured-pack')">
+                Redeem Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="container">
+        <!-- Filter Section -->
+        <section class="filter-section fade-in">
+          <div class="filter-grid">
+            <div class="search-filter">
+              <div class="search-icon">🔍</div>
+              <input
+                type="text"
+                class="search-input"
+                placeholder="Search packs, courses, and items..."
+                id="searchInput"
+              />
+            </div>
+            <select class="filter-select" id="topicFilter">
+              <option value="all">All Topics</option>
+              <option value="algorithms">Algorithms</option>
+              <option value="data-structures">Data Structures</option>
+              <option value="dynamic-programming">Dynamic Programming</option>
+              <option value="graphs">Graph Theory</option>
+              <option value="strings">String Processing</option>
+            </select>
+            <select class="filter-select" id="difficultyFilter">
+              <option value="all">All Levels</option>
+              <option value="beginner">Beginner</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="advanced">Advanced</option>
+              <option value="expert">Expert</option>
+            </select>
+            <select class="filter-select" id="priceFilter">
+              <option value="all">All Prices</option>
+              <option value="free">Free</option>
+              <option value="0-500">0-500 $</option>
+              <option value="500-1000">500-1,000 $</option>
+              <option value="1000+">1,000+ $</option>
+            </select>
+          </div>
+        </section>
+
+        <!-- Category Tabs -->
+        <div class="category-tabs fade-in" id="categoryTabs">
+          <button class="category-tab active" data-category="all">
+            🛍️ All Items
+          </button>
+          <button class="category-tab" data-category="problem-packs">
+            📚 Problem Packs
+          </button>
+          <button class="category-tab" data-category="courses">
+            🎓 Guided Tracks
+          </button>
+          <button class="category-tab" data-category="boosts">
+            ⚡ Boosts & Tools
+          </button>
+          <button class="category-tab" data-category="cosmetics">
+            ✨ Badges & Avatars
+          </button>
+          <button class="category-tab" data-category="swag">
+            👕 Physical Swag
+          </button>
+          <button class="category-tab" data-category="tickets">
+            🎫 Contest Tickets
+          </button>
+        </div>
+
+        <!-- Trending Strip -->
+        <section class="trending-strip fade-in">
+          <div class="section-header">
+            <div class="section-title">🔥 Trending This Week</div>
+          </div>
+          <div class="trending-items" id="trendingItems">
+            <div class="trending-item">
+              <h4 style="color: var(--text-primary); margin-bottom: 0.5rem">
+                Dynamic Programming Mastery
+              </h4>
+              <p
+                style="
+                  color: var(--text-secondary);
+                  font-size: 0.9rem;
+                  margin-bottom: 1rem;
+                "
+              >
+                Curated DP challenges to make hard problems simple.
+              </p>
+              <div style="display: flex; gap: 0.5rem; align-items: center">
+                <div class="coin-icon">$</div>
+                <div style="color: var(--gold); font-family: Orbitron">750</div>
+              </div>
+            </div>
+            <div class="trending-item">
+              <h4 style="color: var(--text-primary); margin-bottom: 0.5rem">
+                Graphs & Shortest Paths Pack
+              </h4>
+              <p
+                style="
+                  color: var(--text-secondary);
+                  font-size: 0.9rem;
+                  margin-bottom: 1rem;
+                "
+              >
+                Classic graph problems + visual explanations.
+              </p>
+              <div style="display: flex; gap: 0.5rem; align-items: center">
+                <div class="coin-icon">$</div>
+                <div style="color: var(--gold); font-family: Orbitron">420</div>
+              </div>
+            </div>
+            <div class="trending-item">
+              <h4 style="color: var(--text-primary); margin-bottom: 0.5rem">
+                Time Travel Ticket (1)
+              </h4>
+              <p
+                style="
+                  color: var(--text-secondary);
+                  font-size: 0.9rem;
+                  margin-bottom: 1rem;
+                "
+              >
+                Reopen a missed daily challenge.
+              </p>
+              <div style="display: flex; gap: 0.5rem; align-items: center">
+                <div class="coin-icon">$</div>
+                <div style="color: var(--gold); font-family: Orbitron">150</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Product Grid -->
+        <section class="store-section">
+          <div class="section-header">
+            <div class="section-title">🧩 Store</div>
+            <a href="#" class="view-all-btn">View All</a>
+          </div>
+
+          <div class="product-grid" id="productGrid">
+            <!-- Product Card 1: Problem Pack -->
+            <div
+              class="product-card"
+              data-category="problem-packs"
+              data-topic="dynamic-programming"
+              data-difficulty="advanced"
+              data-price="750"
+              data-title="DP Mastery Pack"
+            >
+              <div class="product-image">📦</div>
+              <div class="product-info">
+                <div class="product-title">DP Mastery Pack</div>
+                <div class="product-description">
+                  50 curated DP problems with hints & solutions.
+                </div>
+                <div class="product-tags">
+                  <span class="product-tag">DP</span>
+                  <span class="product-tag">Algorithms</span>
+                  <span class="product-tag">150-300 min</span>
+                </div>
+                <div class="product-footer">
+                  <div class="product-price">
+                    <div class="price-amount">
+                      <div class="coin-icon">$</div>
+                      <span>750</span>
+                    </div>
+                  </div>
+                  <div>
+                    <button
+                      class="redeem-btn"
+                      onclick="openModal('item', this.closest('.product-card'))"
+                    >
+                      Preview
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Card 2: Course -->
+            <div
+              class="product-card"
+              data-category="courses"
+              data-topic="algorithms"
+              data-difficulty="intermediate"
+              data-price="1200"
+              data-title="Algorithm Master Bundle"
+            >
+              <div class="product-image">🎓</div>
+              <div class="product-info">
+                <div class="product-title">Algorithm Master Bundle</div>
+                <div class="product-description">
+                  Video course + 150 problems. Ideal for interviews.
+                </div>
+                <div class="product-tags">
+                  <span class="product-tag">Videos</span>
+                  <span class="product-tag">150 problems</span>
+                </div>
+                <div class="product-footer">
+                  <div class="product-price">
+                    <div class="price-amount">
+                      <div class="coin-icon">$</div>
+                      <span>1,200</span>
+                    </div>
+                  </div>
+                  <div>
+                    <button
+                      class="redeem-btn"
+                      onclick="openModal('item', this.closest('.product-card'))"
+                    >
+                      Preview
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Card 3: Boost -->
+            <div
+              class="product-card"
+              data-category="boosts"
+              data-topic="general"
+              data-difficulty="all"
+              data-price="250"
+              data-title="Boost: Extra Submissions (7 days)"
+            >
+              <div class="product-image">⚡</div>
+              <div class="product-info">
+                <div class="product-title">Extra Submissions (7d)</div>
+                <div class="product-description">
+                  Get +5 submissions per problem for 7 days.
+                </div>
+                <div class="product-tags">
+                  <span class="product-tag">Boost</span>
+                  <span class="product-tag">7 days</span>
+                </div>
+                <div class="product-footer">
+                  <div class="product-price">
+                    <div class="price-amount">
+                      <div class="coin-icon">$</div>
+                      <span>250</span>
+                    </div>
+                  </div>
+                  <div>
+                    <button
+                      class="redeem-btn"
+                      onclick="openModal('item', this.closest('.product-card'))"
+                    >
+                      Preview
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Card 4: Cosmetic -->
+            <div
+              class="product-card"
+              data-category="cosmetics"
+              data-topic="avatar"
+              data-difficulty="all"
+              data-price="100"
+              data-title="Cosmic Avatar Frame"
+            >
+              <div class="product-image">✨</div>
+              <div class="product-info">
+                <div class="product-title">Cosmic Avatar Frame</div>
+                <div class="product-description">
+                  A decorative frame for your profile avatar.
+                </div>
+                <div class="product-tags">
+                  <span class="product-tag">Cosmetic</span>
+                  <span class="product-tag">Profile</span>
+                </div>
+                <div class="product-footer">
+                  <div class="product-price">
+                    <div class="price-amount">
+                      <div class="coin-icon">$</div>
+                      <span>100</span>
+                    </div>
+                  </div>
+                  <div>
+                    <button
+                      class="redeem-btn"
+                      onclick="openModal('item', this.closest('.product-card'))"
+                    >
+                      Preview
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Card 5: Swag -->
+            <div
+              class="product-card"
+              data-category="swag"
+              data-topic="merch"
+              data-difficulty="all"
+              data-price="6000"
+              data-title="PlayCode T-Shirt"
+            >
+              <div class="product-image">👕</div>
+              <div class="product-info">
+                <div class="product-title">PlayCode T-Shirt</div>
+                <div class="product-description">
+                  High-quality cotton tee. Limited stock.
+                </div>
+                <div class="product-tags">
+                  <span class="product-tag">Swag</span>
+                  <span class="product-tag">Shipping</span>
+                </div>
+                <div class="product-footer">
+                  <div class="product-price">
+                    <div class="price-amount">
+                      <div class="coin-icon">$</div>
+                      <span>6,000</span>
+                    </div>
+                  </div>
+                  <div>
+                    <button
+                      class="redeem-btn"
+                      onclick="openModal('item', this.closest('.product-card'))"
+                    >
+                      Preview
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Card 6: Ticket -->
+            <div
+              class="product-card"
+              data-category="tickets"
+              data-topic="contest"
+              data-difficulty="all"
+              data-price="150"
+              data-title="Time Travel Ticket"
+            >
+              <div class="product-image">🎫</div>
+              <div class="product-info">
+                <div class="product-title">Time Travel Ticket</div>
+                <div class="product-description">
+                  Reopen a missed daily contest or challenge.
+                </div>
+                <div class="product-tags">
+                  <span class="product-tag">Ticket</span>
+                  <span class="product-tag">1 use</span>
+                </div>
+                <div class="product-footer">
+                  <div class="product-price">
+                    <div class="price-amount">
+                      <div class="coin-icon">$</div>
+                      <span>150</span>
+                    </div>
+                  </div>
+                  <div>
+                    <button
+                      class="redeem-btn"
+                      onclick="openModal('item', this.closest('.product-card'))"
+                    >
+                      Preview
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- How to earn coins -->
+        <section class="trending-strip fade-in" style="margin-bottom: 6rem">
+          <div class="section-header">
+            <div class="section-title">💡 How to earn PlayCoins</div>
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 1rem;
+              flex-wrap: wrap;
+              color: var(--text-secondary);
+            "
+          >
+            <div
+              style="
+                background: var(--secondary-bg);
+                padding: 1rem;
+                border-radius: 12px;
+                border: 1px solid var(--border-color);
+                min-width: 220px;
+              "
+            >
+              <strong>Daily Challenge</strong>
+              <div>→ 50-150 coins</div>
+            </div>
+            <div
+              style="
+                background: var(--secondary-bg);
+                padding: 1rem;
+                border-radius: 12px;
+                border: 1px solid var(--border-color);
+                min-width: 220px;
+              "
+            >
+              <strong>Contest Participation</strong>
+              <div>→ Prize coins</div>
+            </div>
+            <div
+              style="
+                background: var(--secondary-bg);
+                padding: 1rem;
+                border-radius: 12px;
+                border: 1px solid var(--border-color);
+                min-width: 220px;
+              "
+            >
+              <strong>Solve Problems</strong>
+              <div>→ 5-20 coins per unique solve</div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+      <div class="modal-content" id="modalContent">
+        <button class="modal-close" onclick="closeModal()">✕</button>
+        <div class="modal-header">
+          <div class="modal-title" id="modalTitle">Preview</div>
+          <div
+            id="modalSubtitle"
+            style="
+              color: var(--text-secondary);
+              font-size: 0.95rem;
+              margin-top: 6px;
+            "
+          ></div>
+        </div>
+
+        <div
+          id="modalBody"
+          style="color: var(--text-secondary); font-size: 0.95rem"
+        >
+          <!-- dynamic content -->
+        </div>
+
+        <div
+          class="confirmation-actions"
+          id="modalActions"
+          style="margin-top: 1.5rem"
+        >
+          <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+          <button class="btn-confirm" id="modalConfirmBtn">Redeem</button>
+        </div>
+        <div
+          id="modalMessage"
+          style="margin-top: 1rem; color: var(--success); display: none"
+        ></div>
+      </div>
+    </div>
+
+    <script src="./store.js"></script>
+  </body>
+</html>

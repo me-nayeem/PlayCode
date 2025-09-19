@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problems - PlayCode</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/problem.css">
+</head>
+<body>
+    <!-- Navigation -->
+   <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">PlayCode</a>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="#" class="nav-link active">Problems</a></li>
+                <li><a href="#" class="nav-link">Contest</a></li>
+                <li><a href="#" class="nav-link">Play</a></li>
+                <li><a href="#" class="nav-link">Leaderboard</a></li>
+                <li><a href="#" class="nav-link">Store</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="#" class="btn btn-login">Login</a>
+                <a href="#" class="btn btn-signup">Sign Up</a>
+            </div>
+            <i class="fa-solid fa-bars" id="bar"></i>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header fade-in">
+                <h1 class="page-title">Battle Arena</h1>
+                <p class="page-subtitle">Choose your challenge and prove your coding prowess</p>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="stats-section fade-in">
+                <div class="stat-card">
+                    <div class="stat-number">247</div>
+                    <div class="stat-label">Total Problems</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">89</div>
+                    <div class="stat-label">Solved</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">23</div>
+                    <div class="stat-label">Attempted</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1,847</div>
+                    <div class="stat-label">Active Players</div>
+                </div>
+            </div>
+
+            <!-- Filter Section -->
+            <div class="filter-section fade-in">
+                <div class="filter-group">
+                    <div class="filter-row">
+                        <input type="text" class="search-box" placeholder="🔍 Search problems..." id="searchInput">
+                        <select class="filter-select" id="topicFilter">
+                            <option value="">All Topics</option>
+                            <option value="array">Arrays</option>
+                            <option value="string">Strings</option>
+                            <option value="dp">Dynamic Programming</option>
+                            <option value="graph">Graph Theory</option>
+                            <option value="tree">Trees</option>
+                            <option value="math">Mathematics</option>
+                        </select>
+                        <select class="filter-select" id="statusFilter">
+                            <option value="">All Status</option>
+                            <option value="solved">Solved</option>
+                            <option value="attempted">Attempted</option>
+                            <option value="unsolved">Not Attempted</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <div class="difficulty-filters">
+                        <button class="difficulty-btn easy active" data-difficulty="easy">Easy</button>
+                        <button class="difficulty-btn medium active" data-difficulty="medium">Medium</button>
+                        <button class="difficulty-btn hard active" data-difficulty="hard">Hard</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Problems Container -->
+            <div class="problems-container fade-in">
+                <!-- Problems List -->
+                <div class="problems-list">
+                    <div class="problems-header">
+                        <div>Status</div>
+                        <div>Problem</div>
+                        <div class="hide-mobile">Acceptance</div>
+                        <div>Difficulty</div>
+                        <div>Battle</div>
+                    </div>
+                    
+                    <div class="problem-item" data-difficulty="easy" data-topic="array" data-status="solved">
+                        <div class="problem-status status-solved">✓</div>
+                        <div>
+                            <div class="problem-title">Two Sum Warriors</div>
+                            <div class="problem-tags">
+                                <span class="tag">Array</span>
+                                <span class="tag">Hash Table</span>
+                            </div>
+                        </div>
+                        <div class="acceptance-rate hide-mobile">87.5%</div>
+                        <div class="difficulty-easy">Easy</div>
+                        <button class="battle-btn">Battle</button>
+                    </div>
+
+                    <div class="problem-item" data-difficulty="medium" data-topic="string" data-status="attempted">
+                        <div class="problem-status status-attempted">◐</div>
+                        <div>
+                            <div class="problem-title">Palindrome Duel</div>
+                            <div class="problem-tags">
+                                <span class="tag">String</span>
+                                <span class="tag">Two Pointers</span>
+                            </div>
+                        </div>
+                        <div class="acceptance-rate hide-mobile">64.2%</div>
+                        <div class="difficulty-medium">Medium</div>
+                        <button class="battle-btn">Battle</button>
+                    </div>
+
+                    <div class="problem-item" data-difficulty="hard" data-topic="dp" data-status="unsolved">
+                        <div class="problem-status status-unsolved">○</div>
+                        <div>
+                            <div class="problem-title">Dragon Slayer DP</div>
+                            <div class="problem-tags">
+                                <span class="tag">Dynamic Programming</span>
+                                <span class="tag">Recursion</span>
+                            </div>
+                        </div>
+                        <div class="acceptance-rate hide-mobile">23.8%</div>
+                        <div class="difficulty-hard">Hard</div>
+                        <button class="battle-btn">Battle</button>
+                    </div>
+
+                    <div class="problem-item" data-difficulty="easy" data-topic="array" data-status="solved">
+                        <div class="problem-status status-solved">✓</div>
+                        <div>
+                            <div class="problem-title">Maximum Subarray Quest</div>
+                            <div class="problem-tags">
+                                <span class="tag">Array</span>
+                                <span class="tag">Divide & Conquer</span>
+                            </div>
+                        </div>
+                        <div class="acceptance-rate hide-mobile">71.4%</div>
+                        <div class="difficulty-easy">Easy</div>
+                        <button class="battle-btn">Battle</button>
+                    </div>
+
+                    <div class="problem-item" data-difficulty="medium" data-topic="graph" data-status="unsolved">
+                        <div class="problem-status status-unsolved">○</div>
+                        <div>
+                            <div class="problem-title">Island Explorer</div>
+                            <div class="problem-tags">
+                                <span class="tag">Graph</span>
+                                <span class="tag">DFS</span>
+                                <span class="tag">BFS</span>
+                            </div>
+                        </div>
+                        <div class="acceptance-rate hide-mobile">56.9%</div>
+                        <div class="difficulty-medium">Medium</div>
+                        <button class="battle-btn">Battle</button>
+                    </div>
+
+                    <div class="problem-item" data-difficulty="medium" data-topic="tree" data-status="attempted">
+                        <div class="problem-status status-attempted">◐</div>
+                        <div>
+                            <div class="problem-title">Binary Tree Mastery</div>
+                            <div class="problem-tags">
+                                <span class="tag">Tree</span>
+                                <span class="tag">Recursion</span>
+                            </div>
+                        </div>
+                        <div class="acceptance-rate hide-mobile">45.3%</div>
+                        <div class="difficulty-medium">Medium</div>
+                        <button class="battle-btn">Battle</button>
+                    </div>
+
+                    <div class="problem-item" data-difficulty="easy" data-topic="math" data-status="solved">
+                        <div class="problem-status status-solved">✓</div>
+                        <div>
+                            <div class="problem-title">Prime Number Challenge</div>
+                            <div class="problem-tags">
+                                <span class="tag">Math</span>
+                                <span class="tag">Number Theory</span>
+                            </div>
+                        </div>
+                        <div class="acceptance-rate hide-mobile">82.1%</div>
+                        <div class="difficulty-easy">Easy</div>
+                        <button class="battle-btn">Battle</button>
+                    </div>
+
+                    <div class="problem-item" data-difficulty="hard" data-topic="graph" data-status="unsolved">
+                        <div class="problem-status status-unsolved">○</div>
+                        <div>
+                            <div class="problem-title">Shortest Path Warrior</div>
+                            <div class="problem-tags">
+                                <span class="tag">Graph</span>
+                                <span class="tag">Dijkstra</span>
+                            </div>
+                        </div>
+                        <div class="acceptance-rate hide-mobile">18.7%</div>
+                        <div class="difficulty-hard">Hard</div>
+                        <button class="battle-btn">Battle</button>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <!-- Calendar -->
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title">Daily Challenges</h3>
+                        <div class="calendar" id="calendar">
+                            <!-- Calendar will be generated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Topics -->
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title">Popular Topics</h3>
+                        <div class="topics-list">
+                            <div class="topic-item" data-topic="array">
+                                <span>Arrays</span>
+                                <span class="topic-count">45</span>
+                            </div>
+                            <div class="topic-item" data-topic="string">
+                                <span>Strings</span>
+                                <span class="topic-count">38</span>
+                            </div>
+                            <div class="topic-item" data-topic="dp">
+                                <span>Dynamic Programming</span>
+                                <span class="topic-count">32</span>
+                            </div>
+                            <div class="topic-item" data-topic="graph">
+                                <span>Graph Theory</span>
+                                <span class="topic-count">28</span>
+                            </div>
+                            <div class="topic-item" data-topic="tree">
+                                <span>Trees</span>
+                                <span class="topic-count">25</span>
+                            </div>
+                            <div class="topic-item" data-topic="math">
+                                <span>Mathematics</span>
+                                <span class="topic-count">19</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="./problem.js"></script>
+</body>
+</html>
