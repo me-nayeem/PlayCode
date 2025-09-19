@@ -161,6 +161,11 @@ The goal is to create a **unique, learner-friendly coding experience** with feat
 
 ---
 
+## Home:
+
+<img src="assets/images/PlayCodeHome.png" alt="PlayCode Dashboard" width="600"/>
+
+
 # 🤝 Contributing
 
 Contributions are welcome! Please fork this repo, make a feature branch, and open a pull request.
