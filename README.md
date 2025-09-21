@@ -26,110 +26,244 @@ As someone who loves both coding and gaming, I wanted to create an environment w
 
       and more..........
 
-In short, this platform combines **learning, gaming, and community** to help coders sharpen their skills while having fun! 🚀
-
 ---
 A modern problem-solving & coding practice platform built with **Node.js (Express)** and **vanilla HTML/CSS/JS**.  
 The goal is to create a **unique, learner-friendly coding experience** with features like hints, analytics, and gamification.  
 
 # 🚀 PlayCode — Level Up Your Coding Skills with Fun!
 
-## Key Features
-
-      🧩 Step-by-Step Hints – Learn progressively from concept → pseudo-code → solution
-      
-      📊 Personalized Analytics – Track your strengths, weaknesses, and progress
-      
-      🎮 Gamified Experience – Earn XP, streaks, badges, and complete challenges
-      
-      📚 Study Planner – Follow a roadmap based on your university courses
-      
-      🏆 Community Explanations – Upvote hints, share tutorials, and learn together
-      
-      🌙 Minimalist UI – Focused, distraction-free coding environment
-
-**Compete & Connect**
-
-      🥇 Leaderboard & Rankings – See your global and weekly position
-      
-      👥 Play Game Mode – Challenge opponents in real-time coding games
-      
-      🎫 Contests Participation – Join timed contests, compete, and earn rewards
-
-**Earn & Unlock**
-
-      🛍️ Store & Rewards – Redeem prizes, unlock themes, badges, and boosts
-      
-      🏅 Achievements – Collect badges for milestones, streaks, and wins
+---
+ 
+**Vision:** Build a secure, engaging, and scalable platform for learning and competitive coding — combining production-quality judge infrastructure, strong community features, and a playful coin-based economy that drives retention.
 
 ---
 
-## 🏗️ Tech Stack
-
-- **Backend**: Node.js, Express  
-- **Frontend**: HTML, CSS, JavaScript (no React for now)  
-- **Database**: MongoDB  
-- **CI/CD**: GitHub Actions (to be added)  
+## Table of contents
+1. [Executive Summary](#executive-summary)  
+2. [Roadmap Overview & Release Strategy](#roadmap-overview--release-strategy)  
+3. [Versioned Roadmap](#versioned-roadmap-professional-prioritized)  
+4. [Cross-Cutting Concerns (Security, Observability, Compliance)](#cross-cutting-concerns-security-observability-compliance)  
+5. [Data Model](#data-model-high-level)  
+6. [Technical Stack](#recommended-technical-stack)  
+7. [KPIs & Success Metrics](#kpis--success-metrics)    
 
 ---
 
-# 🚀 Versions & Roadmap
+## 1. Executive Summary
 
-**Version 1 — Layout & Design 🏗️**
+**PlayCode will deliver a polished coding platform focused on three core value propositions:**
 
-    🌐 Establish full PlayCode web app structure (Home, Problems, Contests, Store, Player Dashboard)
-    
-    📌 Consistent top navigation bar with logo, search, notifications, and profile dropdown
-    
-    🎨 Unified design system: clean two-column layouts, semi-circle analytics, and card-based sections
-    
-    ✨ Hero sections for each main page (welcome panel on dashboard, featured contests on contest page)
-    
-    🛒 Store page with coin balance display and redeemable rewards catalog
-    
-    📈 Activity feeds, recommendation panels, and gamified elements (badges, streaks) integrated across pages
-    
-    💎 Modern, clean UI style with soft shadows, rounded edges, and playful accent colors
+      1.Solve & Learn: Robust problem-solving flows (editor, judge, feedback).  
+      
+      2. Compete & Progress: Contests, leaderboards, quizzes, and team competitions.  
+      
+      3. Engage & Retain: Community interactions, gamification (coins, badges), and a small commerce layer (store).
 
-**Version 2 — Code Submission Functionality 💻**
+---
 
-    📝 Add problem-solving workspace
-    
-    👨‍💻 Code editor + test cases panel
-    
-    📊 Submission history with verdicts
+## 2. Roadmap Overview & Release Strategy
 
-**Version 3 — Leaderboard Functionality 🏆**
-    
-    🌍 Global & weekly leaderboards
-    
-    📈 Ranking by solved problems, contests, and coins
-    
-    🥇 Highlight top coders of the week
+      1. MVP (Phase 0/1 — Launch): Core pages + authentication + judge integration + basic gamification + leaderboards + admin tools. 
+      Validate retention and problem-solving frequency.  
+      
+      2. Phase 2 (Grow): Community, quizzes, store, and enhanced analytics.  
+      
+      3. Phase 3 (Scale): Team contests, advanced anti-cheat, payments & revenue features, AI recommendations, and localization.
 
-**Version 4 — Game Mode Functionality 🎮**
+**Priority emphasis: identity, safe code execution, moderation, and observability.**
 
-    🕹️ Coding mini-games integration
-    
-    📊 Progress tracking per game
-    
-    🎁 Gamified rewards with coins & badges
+---
 
-**Version 5 — Store Functionality 🛍️**
+## 3. Versioned Roadmap
 
-    💰 Coin-based store system
-    
-    🎨 Purchase themes, badges, and boosts
-    
-    📜 Track coin history
+### Version 1 — Foundation: UI, Pages & Design System  
 
-**Future Versions (Planned) 🔮**
+**Goal:** Ship a polished public-facing site and core page scaffolding.
 
-    🤝 Team contests & group challenges
-    
-    🎯 Personalized learning paths
-    
-    🤖 Advanced analytics with AI-based recommendations
+      1. Pages: Home, Problems, Contests (listing), Play (hub), Store (catalog), Player Dashboard, Docs/Help.  
+      
+      2. Global components: Top nav (logo, search, notifications, profile), footer, responsive layout.
+      
+      3. Design system: Tailwind-ready tokens, typography scale, card patterns, forms, color system, and accessibility (WCAG basics).
+      
+      4. Monaco Editor stub integrated (readonly until judge ready).
+
+---
+
+### Version 2 — Authentication & User Profiles
+
+**Goal:** Establish identity and trust; required for almost all product features.
+
+      1. Email/password signup & login, email verification, password reset.
+      
+      2 .OAuth: Google + GitHub.  
+      
+      3. Profile flow: username, avatar, bio, preferred languages, timezone.
+      
+      4. Session management (JWT + refresh), basic security headers, account settings.  
+      
+      5. Minimal privacy & TOS pages; cookie consent banner.
+
+---
+
+### Version 3 — Judge Integration & Safe Code Execution
+
+**Goal:** Enable secure code execution for submissions and contests.
+
+      1. MVP approach: Hosted judge (Judge0 or Piston).  
+      
+      2. Long-term: architecture for in-house runner (Dockerized sandbox or microVM) + job queue (BullMQ/Redis).  
+      
+      3. Safety: time & memory limits, CPU quotas, per-user rate limits, container teardown. 
+      
+      4. Submission API flow: createSubmission → enqueue → runner → callback/webhook → persist verdict.
+
+---
+
+### Version 4 — Problem Solving Flow & Submission History  
+
+**Goal:** Complete end-to-end solve cycle with user-visible history.
+
+      1. Monaco editor + test case panel + run & submit.  
+      
+      2. Submission history with verdicts, runtimes, outputs.  
+      
+      3. Hidden testcases & grader metadata support.  
+      
+      4. UX for first-time users and failure cases.
+
+---
+
+### Version 5 — Leaderboards, Badges & Core Gamification  
+
+**Goal:** Create incentives for competition and repeat usage.
+
+      1. Global & weekly leaderboards (solved count, contest score, coins). 
+      
+      2. Badges & achievements engine.  
+      
+      3. Coin rewards (transaction ledger).  
+      
+      4. Daily streaks and first-time completion rewards.
+
+---
+
+### Version 6 — Admin & Moderation Tools
+
+**Goal:** Manage abuse, content, and coin economy.
+
+      1. Admin panel: user management (ban/unban), manual coin adjustments, contest creation, moderation queue.  
+      
+      2. Reports system: flag submissions, comments, user profiles.  
+      
+      3. Audit logs for sensitive actions (transaction reversals, bans).
+
+---
+
+### Version 7 — Quizzes, Short-Form Play & Play Page Hub  
+
+**Goal:** Increase discoverability and short-session engagement.
+
+      1. Play hub with quick-start challenge and mode selector (Practice, Challenge, Speed Run).  
+      
+      2. Quiz engine: timed multiple-choice and code-completion quizzes.  
+      
+      3. Earn PlayCoins for participation/correct answers; quiz leaderboards.  
+      
+      4. Real-time progress tracker and instant rewards.
+
+---
+
+### Version 8 — Community Features (Discussion & Peer Feedback)  
+
+**Goal:** Social features to grow retention and create content.
+
+      1. Problem-level discussions, comments, upvotes.  
+      
+      2. Peer feedback flows: mark helpful answers, accept suggestions.  
+      
+      3. Reputation points and helper badges.  
+      
+      4. Notification system (in-app + email digests).
+
+---
+
+### Version 9 — Store, Economy, & Small Commerce  
+
+**Goal:** Monetization surface and coin sinks to balance the economy.
+
+      1. PlayCoin ledger (immutable transactions).  
+      
+      2. Store: buy themes, badges, boosts (virtual goods only).  
+      
+      3. Coin purchase integration (Stripe) — receipts, disputes, refund workflows.  
+      
+      4. Analytics for coin velocity & sink effectiveness.
+
+---
+
+### Version 10 — Team Contests & Advanced Competition Modes  
+
+**Goal:** Deep social competitions and collaborative events.
+      
+      1. Team creation/joining, shared team leaderboards, team-based contest format.  
+      
+      2. Group challenge scoring & shared rewards.  
+      
+      3. Admin tooling for scheduled tournaments and prizes.
+
+---
+
+## 4. Cross-Cutting Concerns (Security, Observability, Compliance)
+
+      1. Anti-cheat & Plagiarism Detection: randomized hidden tests, submission similarity detection (MOSS-like), 
+      heuristics to flag suspicious behavior.  
+      
+      2. Rate limiting & Abuse Prevention: Redis-backed quotas for submissions, API throttling.  
+      
+      3. Monitoring: Sentry (errors), Prometheus/Grafana (metrics), centralized logging (Loki/ELK).  
+      
+      4. Backups & Migrations: scheduled DB backups (pgdump), schema migration tools (Prisma/Flyway).  
+      
+      5. Legal & Privacy: privacy policy, TOS, GDPR preparedness, email opt-ins.
+
+---
+
+## 5. Data Model
+
+      Manage data efficiently. 
+      
+---
+
+## 6. Technical Stack
+
+      Frontend: Next.js + React + Tailwind CSS, Monaco Editor.(React not added till now)
+      
+      Backend: Node.js (Express).
+      
+      DB: MongoDB, Redis (cache, rate limits, queues). 
+      
+      Runner / Judge: Judge0.    
+      
+      Storage: S3-compatible for assets.  
+      
+      CI/CD: GitHub Actions → Vercel (frontend); Render for backend.  
+      
+      Payments: It depends on project progration.
+
+---
+
+## 7. KPIs & Success Metrics
+
+      1. Activation: % users who complete profile & run first submission.  
+      
+      2. Engagement: DAU, submissions per active user, contests participated per month.  
+      
+      3. Retention: D1, D7, D30 retention.  
+      
+      4. Monetization: conversion rate to paid coins, ARPU, churn on paid features.  
+      
+      5. Quality: average verdict success rate, submission error rate, infra failures.
 
 ---
 
