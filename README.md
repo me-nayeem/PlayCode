@@ -290,7 +290,6 @@ The goal is to create a **unique, learner-friendly coding experience** with feat
         │ ├── 📄 .env.example
         ├── 📁 frontend/ # React / HTML / CSS frontend (frontend is not add till now)
         ├── 📄 .gitignore # Git ignore file
-        ├── 📄 LICENSE # Project license
         ├── 📄 README.md # Project documentation
 
 ---
