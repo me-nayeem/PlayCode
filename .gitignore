@@ -1,3 +1,4 @@
 # Ignore backend environment files
 backend/.env
 backend/.env.example
+backend/node_modules/

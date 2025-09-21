@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Two Sum Warriors - PlayCode</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/eachProblemPage.css">
+  </head>
+  <body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <div class="problem-info">
+        <div class="problem-title">Two Sum Warriors</div>
+        <div class="difficulty-badge easy">Easy</div>
+      </div>
+
+      <div class="timer">
+        <span>⏱️</span>
+        <span id="timer">25:34</span>
+      </div>
+
+      <div class="user-profile">
+        <div class="xp-display">
+          <span>⚡</span>
+          <span>15,742 XP</span>
+        </div>
+        <img
+          src="https://api.dicebear.com/7.x/avataaars/svg?seed=nayeem"
+          alt="User Avatar"
+          class="user-avatar"
+          onclick="showUserMenu()"
+        />
+      </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+      <!-- Left Panel - Problem Statement -->
+      <div class="left-panel">
+        <div class="problem-tabs">
+          <button class="tab active" onclick="switchTab('description')">
+            Description
+          </button>
+          <button class="tab" onclick="switchTab('editorial')">
+            Editorial
+          </button>
+          <button class="tab" onclick="switchTab('discussions')">
+            Discussions
+          </button>
+          <button class="tab" onclick="switchTab('submissions')">
+            Submissions
+          </button>
+        </div>
+
+        <div class="problem-content">
+          <!-- Description Tab -->
+          <div id="description" class="problem-section active">
+            <h2>Problem Statement</h2>
+            <p>
+              Given an array of integers <code>nums</code> and an integer
+              <code>target</code>, return indices of the two numbers such that
+              they add up to target in a coding battle scenario.
+            </p>
+
+            <p>
+              You may assume that each input would have exactly one solution,
+              and you may not use the same element twice. Your solution will be
+              tested against other players in real-time combat!
+            </p>
+
+            <h3>Example 1:</h3>
+            <div class="example-box">
+              <div class="code-block">
+                <pre><strong>Input:</strong> nums = [2,7,11,15], target = 9
+<strong>Output:</strong> [0,1]
+<strong>Explanation:</strong> Because nums[0] + nums[1] == 9, we return [0, 1].</pre>
+              </div>
+            </div>
+
+            <h3>Example 2:</h3>
+            <div class="example-box">
+              <div class="code-block">
+                <pre><strong>Input:</strong> nums = [3,2,4], target = 6
+<strong>Output:</strong> [1,2]</pre>
+              </div>
+            </div>
+
+            <h3>Example 3:</h3>
+            <div class="example-box">
+              <div class="code-block">
+                <pre><strong>Input:</strong> nums = [3,3], target = 6
+<strong>Output:</strong> [0,1]</pre>
+              </div>
+            </div>
+
+            <h3>Constraints:</h3>
+            <ul class="constraints-list">
+              <li>2 ≤ nums.length ≤ 10⁴</li>
+              <li>-10⁹ ≤ nums[i] ≤ 10⁹</li>
+              <li>-10⁹ ≤ target ≤ 10⁹</li>
+              <li>Only one valid answer exists</li>
+            </ul>
+
+            <h3>Battle Rewards:</h3>
+            <ul class="constraints-list">
+              <li>Base XP: 150 points</li>
+              <li>Speed bonus: +50 XP if solved under 10 minutes</li>
+              <li>Efficiency bonus: +25 XP for O(n) solution</li>
+              <li>Battle victory: +100 XP for defeating opponent</li>
+            </ul>
+          </div>
+
+          <!-- Editorial Tab -->
+          <div id="editorial" class="problem-section">
+            <h2>Editorial</h2>
+            <p>
+              This problem can be solved using multiple approaches. Let's
+              explore the most efficient solutions:
+            </p>
+
+            <h3>Approach 1: Brute Force</h3>
+            <p>Check every pair of numbers to see if they sum to the target.</p>
+            <div class="code-block">
+              <pre>
+def twoSum(nums, target):
+    for i in range(len(nums)):
+        for j in range(i + 1, len(nums)):
+            if nums[i] + nums[j] == target:
+                return [i, j]</pre
+              >
+            </div>
+            <p>
+              <strong>Time Complexity:</strong> O(n²)<br /><strong
+                >Space Complexity:</strong
+              >
+              O(1)
+            </p>
+
+            <h3>Approach 2: Hash Map (Optimal)</h3>
+            <p>
+              Use a hash map to store values and their indices for O(n) lookup.
+            </p>
+            <div class="code-block">
+              <pre>
+def twoSum(nums, target):
+    hashmap = {}
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in hashmap:
+            return [hashmap[complement], i]
+        hashmap[num] = i</pre
+              >
+            </div>
+            <p>
+              <strong>Time Complexity:</strong> O(n)<br /><strong
+                >Space Complexity:</strong
+              >
+              O(n)
+            </p>
+          </div>
+
+          <!-- Discussions Tab -->
+          <div id="discussions" class="problem-section">
+            <h2>Community Discussions</h2>
+            <p>Join the battle discussion with fellow coders!</p>
+
+            <div class="example-box">
+              <h4>💬 CodeMaster_99</h4>
+              <p>
+                Just solved this in 3 minutes using the hash map approach. The
+                key insight is that we only need one pass through the array!
+              </p>
+              <small style="color: var(--text-secondary)"
+                >2 hours ago • 👍 15</small
+              >
+            </div>
+
+            <div class="example-box">
+              <h4>💬 AlgoWarrior</h4>
+              <p>
+                Great problem for beginners! Started with brute force but
+                optimized to O(n). The XP rewards make it even more fun!
+              </p>
+              <small style="color: var(--text-secondary)"
+                >5 hours ago • 👍 8</small
+              >
+            </div>
+          </div>
+
+          <!-- Submissions Tab -->
+          <div id="submissions" class="problem-section">
+            <h2>Your Submissions</h2>
+            <p>Track your progress and improvement over time.</p>
+
+            <div class="example-box">
+              <div class="test-case-header">
+                <span class="test-case-title">Submission #1</span>
+                <span class="test-status status-passed">Accepted</span>
+              </div>
+              <p>
+                <strong>Language:</strong> Python<br />
+                <strong>Runtime:</strong> 52ms<br />
+                <strong>Memory:</strong> 15.2MB<br />
+                <strong>Time:</strong> 8 minutes ago
+              </p>
+            </div>
+
+            <div class="example-box">
+              <div class="test-case-header">
+                <span class="test-case-title">Submission #2</span>
+                <span class="test-status status-failed">Wrong Answer</span>
+              </div>
+              <p>
+                <strong>Language:</strong> Python<br />
+                <strong>Error:</strong> Expected [0,1] but got [1,0]<br />
+                <strong>Time:</strong> 12 minutes ago
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resizer -->
+      <div class="resizer" id="resizer"></div>
+
+      <!-- Right Panel - Code Editor -->
+      <div class="right-panel">
+        <div class="editor-header">
+          <div class="language-selector">
+            <label for="language">Language:</label>
+            <select
+              id="language"
+              class="language-select"
+              onchange="changeLanguage()"
+            >
+              <option value="python">Python</option>
+              <option value="javascript">JavaScript</option>
+              <option value="java">Java</option>
+              <option value="cpp">C++</option>
+              <option value="c">C</option>
+              <option value="go">Go</option>
+            </select>
+          </div>
+
+          <div class="editor-actions">
+            <button class="action-btn btn-run" onclick="runCode()">
+              <span id="runText">Run Code</span>
+            </button>
+            <button class="action-btn btn-submit" onclick="submitCode()">
+              <span id="submitText">Submit Solution</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="code-editor-container">
+          <textarea
+            class="code-editor"
+            id="codeEditor"
+            placeholder="# Write your solution here...
+def twoSum(nums, target):
+    # Your code goes here
+    pass"
+          ></textarea>
+        </div>
+
+        <div class="console-panel">
+          <div class="console-header">
+            <div class="console-tabs">
+              <button
+                class="console-tab active"
+                onclick="switchConsoleTab('output')"
+              >
+                Output
+              </button>
+              <button
+                class="console-tab"
+                onclick="switchConsoleTab('testcases')"
+              >
+                Test Cases
+              </button>
+              <button class="console-tab" onclick="switchConsoleTab('debug')">
+                Debug
+              </button>
+            </div>
+            <div class="console-actions">
+              <button
+                class="console-btn"
+                onclick="clearConsole()"
+                title="Clear"
+              >
+                🗑️
+              </button>
+              <button
+                class="console-btn"
+                onclick="expandConsole()"
+                title="Expand"
+              >
+                📏
+              </button>
+            </div>
+          </div>
+
+          <div class="console-content" id="consoleContent">
+            <div id="output" class="console-section active">
+              <p style="color: var(--text-secondary)">
+                Run your code to see the output here...
+              </p>
+            </div>
+
+            <div id="testcases" class="console-section" style="display: none">
+              <div class="test-case passed">
+                <div class="test-case-header">
+                  <span class="test-case-title">Test Case 1</span>
+                  <span class="test-status status-passed">Passed</span>
+                </div>
+                <div class="code-block">
+                  <pre>
+Input: nums = [2,7,11,15], target = 9
+Expected: [0,1]
+Output: [0,1]</pre
+                  >
+                </div>
+              </div>
+
+              <div class="test-case failed">
+                <div class="test-case-header">
+                  <span class="test-case-title">Test Case 2</span>
+                  <span class="test-status status-failed">Failed</span>
+                </div>
+                <div class="code-block">
+                  <pre>
+Input: nums = [3,2,4], target = 6
+Expected: [1,2]
+Output: [2,1]</pre
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div id="debug" class="console-section" style="display: none">
+              <p style="color: var(--text-secondary)">
+                Debug information will appear here when running code...
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-actions">
+      <button class="floating-btn" onclick="toggleHints()" title="Hints">
+        💡
+      </button>
+      <button class="floating-btn" onclick="shareCode()" title="Share">
+        🔗
+      </button>
+      <button
+        class="floating-btn"
+        onclick="toggleFullscreen()"
+        title="Fullscreen"
+      >
+        ⛶
+      </button>
+    </div>
+
+    <script src="./eachProblemPage.js"></script>
+  </body>
+</html>

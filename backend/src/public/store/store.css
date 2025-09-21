@@ -27,6 +27,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
 }
+/* Navigation */
 .navbar {
   position: fixed;
   top: 0;
@@ -37,14 +38,19 @@ body {
   padding: 1rem 0;
   transition: all 0.3s ease;
 }
+
+#bar {
+  display: none;
+}
 .nav-container {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .logo {
   font-family: "Orbitron", monospace;
   font-size: 1.8rem;
@@ -55,11 +61,13 @@ body {
   -webkit-text-fill-color: transparent;
   text-decoration: none;
 }
+
 .nav-menu {
   display: flex;
   list-style: none;
   gap: 2rem;
 }
+
 .nav-link {
   color: var(--text-secondary);
   text-decoration: none;
@@ -67,10 +75,15 @@ body {
   transition: all 0.3s ease;
   position: relative;
 }
+
 .nav-link:hover,
 .nav-link.active {
   color: var(--accent-color);
 }
+.nav-link:hover {
+  color: var(--accent-color);
+}
+
 .nav-link::after {
   content: "";
   position: absolute;
@@ -81,42 +94,16 @@ body {
   background: var(--gradient-1);
   transition: width 0.3s ease;
 }
-.nav-link:hover::after,
-.nav-link.active::after {
+
+.nav-link:hover::after {
   width: 100%;
 }
-.wallet-info {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  background: var(--card-bg);
-  padding: 0.5rem 1rem;
-  border-radius: 25px;
-  border: 1px solid var(--border-color);
-}
-.coin-balance {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: "Orbitron", monospace;
-  font-weight: 700;
-  color: var(--gold);
-}
-.coin-icon {
-  width: 20px;
-  height: 20px;
-  background: var(--gold);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-  color: var(--primary-bg);
-}
+
 .auth-buttons {
   display: flex;
   gap: 1rem;
 }
+
 .btn {
   padding: 0.7rem 1.5rem;
   border: none;
@@ -127,24 +114,30 @@ body {
   transition: all 0.3s ease;
   cursor: pointer;
 }
+
 .btn-login {
   background: transparent;
   color: var(--text-primary);
   border: 2px solid var(--border-color);
 }
+
 .btn-login:hover {
   border-color: var(--accent-color);
   color: var(--accent-color);
 }
+
 .btn-signup {
   background: var(--gradient-1);
   color: var(--primary-bg);
   font-weight: 700;
 }
+
 .btn-signup:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(0, 255, 136, 0.3);
 }
+
+
 .main-content {
   margin-top: 80px;
   min-height: calc(100vh - 80px);
@@ -663,5 +656,20 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+
+@media (max-width: 950px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .auth-buttons {
+    display: none;
+  }
+
+  #bar {
+    display: block;
   }
 }

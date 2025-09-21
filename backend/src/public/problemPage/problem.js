@@ -1,4 +1,3 @@
-// Generate calendar
         function generateCalendar() {
             const calendar = document.getElementById('calendar');
             const today = new Date();
@@ -7,7 +6,6 @@
             const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
             const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
             
-            // Add day headers
             const dayHeaders = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
             dayHeaders.forEach(day => {
                 const dayHeader = document.createElement('div');
@@ -16,26 +14,20 @@
                 dayHeader.style.color = 'var(--text-secondary)';
                 calendar.appendChild(dayHeader);
             });
-
-            // Add empty cells for days before month starts
             for (let i = 0; i < firstDayOfMonth; i++) {
                 const emptyDay = document.createElement('div');
                 emptyDay.className = 'calendar-day';
                 calendar.appendChild(emptyDay);
             }
-
-            // Add days of the month
             for (let day = 1; day <= daysInMonth; day++) {
                 const dayElement = document.createElement('div');
                 dayElement.className = 'calendar-day';
                 dayElement.textContent = day;
                 
-                // Add special classes
                 if (day === today.getDate()) {
                     dayElement.classList.add('today');
                 }
                 
-                // Randomly add some days with problems
                 if (Math.random() > 0.7) {
                     dayElement.classList.add('has-problems');
                 }
@@ -97,8 +89,6 @@
                 const topic = item.getAttribute('data-topic');
                 topicFilter.value = topic;
                 filterProblems();
-                
-                // Visual feedback
                 document.querySelectorAll('.topic-item').forEach(t => t.style.background = 'var(--card-bg)');
                 item.style.background = 'var(--hover-bg)';
             });
@@ -108,8 +98,6 @@
         document.querySelectorAll('.battle-btn').forEach(btn => {
             btn.addEventListener('click', function(e) {
                 e.preventDefault();
-                
-                // Add ripple effect
                 const ripple = document.createElement('span');
                 const rect = this.getBoundingClientRect();
                 const size = Math.max(rect.width, rect.height);
@@ -172,10 +160,8 @@
             observer.observe(el);
         });
 
-        // Initialize calendar and animations
         generateCalendar();
 
-        // Add CSS for ripple effect
         const style = document.createElement('style');
         style.textContent = `
             @keyframes ripple {
@@ -200,7 +186,6 @@
         `;
         document.head.appendChild(style);
 
-        // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
@@ -210,7 +195,7 @@
             }
         });
 
-        // Add loading animation for problem items
+        // loading animation for problem items
         let loadDelay = 0;
         problemItems.forEach(item => {
             item.style.opacity = '0';
@@ -223,7 +208,7 @@
             loadDelay += 100;
         });
 
-        // Add hover effects for better UX
+        // hover effects for better UX
         document.querySelectorAll('.problem-item').forEach(item => {
             item.addEventListener('mouseenter', function() {
                 this.style.borderLeft = '4px solid var(--accent-color)';
@@ -235,3 +220,12 @@
                 this.style.paddingLeft = '1.5rem';
             });
         });
+
+        window.addEventListener("scroll", () => {
+  const navbar = document.querySelector(".navbar");
+  if (window.scrollY > 50) {
+    navbar.style.background = "transparent";
+  } else {
+    navbar.style.background = "rgba(26, 26, 26, 0.95)";
+  }
+});

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contests - PlayCode</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/contest/contest.css">
+</head>
+
+<body>
+  <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="#" class="logo">PlayCode</a>
+        <ul class="nav-menu">
+          <li><a href="/" class="nav-link ">Home</a></li>
+          <li><a href="/problems" class="nav-link">Problems</a></li>
+          <li><a href="/contest" class="nav-link active">Contest</a></li>
+          <li><a href="#" class="nav-link">Play</a></li>
+          <li><a href="/leaderboard" class="nav-link">Leaderboard</a></li>
+          <li><a href="/store" class="nav-link">Store</a></li>
+        </ul>
+        <div class="auth-buttons">
+          <a href="/login" class="btn btn-login">Login</a>
+          <a href="/signup" class="btn btn-signup">Sign Up</a>
+        </div>
+        <i class="fa-solid fa-bars" id="bar"></i>
+      </div>
+    </nav>
+
+  <!-- Contest Header -->
+  <div class="contest-header">
+    <div class="container">
+      <h1 class="contest-title">Coding Battles</h1>
+      <p class="contest-subtitle">Compete with elite coders worldwide in epic programming challenges</p>
+    </div>
+  </div>
+
+  <!-- Filter Bar -->
+  <div class="filter-bar">
+    <div class="container">
+      <div class="filter-content">
+        <div class="search-bar">
+          <span class="info-icon">🔍</span>
+          <input type="text" class="search-input" placeholder="Search contests...">
+        </div>
+
+        <div class="filter-options">
+          <select class="filter-select">
+            <option value="all">All Types</option>
+            <option value="official">Official</option>
+            <option value="community">Community</option>
+            <option value="practice">Practice</option>
+          </select>
+
+          <select class="filter-select">
+            <option value="all">All Difficulties</option>
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+            <option value="expert">Expert</option>
+          </select>
+
+          <div class="view-toggle">
+            <button class="view-btn active">📋</button>
+            <button class="view-btn">📊</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="main-content">
+      <!-- Live Contests -->
+      <div class="section">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span class="status-live">🔴 Live Contests</span>
+            <span class="section-count">2</span>
+          </h2>
+        </div>
+
+        <div class="contest-grid">
+          <div class="contest-card">
+            <div class="contest-card-header">
+              <div>
+                <h3 class="contest-name">Weekly Challenge #47</h3>
+                <div class="contest-type official">Official</div>
+              </div>
+              <div class="status-live">LIVE</div>
+            </div>
+
+            <div class="contest-info">
+              <div class="info-item">
+                <span class="info-icon">⏰</span>
+                <span>Started 2 hours ago</span>
+              </div>
+              <div class="info-item">
+                <span class="info-icon">⏳</span>
+                <span>1h 30m remaining</span>
+              </div>
+              <div class="info-item">
+                <span class="info-icon">👥</span>
+                <span>2,847 participants</span>
+              </div>
+              <div class="info-item">
+                <span class="info-icon">🏆</span>
+                <span>500 XP + Badge</span>
+              </div>
+            </div>
+
+            <div class="contest-stats">
+              <div class="stat">
+                <div class="stat-value">5</div>
+                <div class="stat-label">Problems</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">3h</div>
+                <div class="stat-label">Duration</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">★★★</div>
+                <div class="stat-label">Difficulty</div>
+              </div>
+            </div>
+
+            <div class="contest-actions">
+              <a href="#" class="contest-btn btn-primary">Join Battle</a>
+              <a href="#" class="contest-btn btn-secondary">View Problems</a>
+            </div>
+          </div>
+
+          <div class="contest-card">
+            <div class="contest-card-header">
+              <div>
+                <h3 class="contest-name">Algorithm Arena</h3>
+                <div class="contest-type community">Community</div>
+              </div>
+              <div class="status-live">LIVE</div>
+            </div>
+
+            <div class="contest-info">
+              <div class="info-item">
+                <span class="info-icon">⏰</span>
+                <span>Started 45 minutes ago</span>
+              </div>
+              <div class="info-item">
+                <span class="info-icon">⏳</span>
+                <span>2h 15m remaining</span>
+              </div>
+              <div class="info-item">
+                <span class="info-icon">👥</span>
+                <span>1,234 participants</span>
+              </div>
+              <div class="info-item">
+                <span class="info-icon">🏆</span>
+                <span>300 XP</span>
+              </div>
+            </div>
+
+            <div class="contest-stats">
+              <div class="stat">
+                <div class="stat-value">4</div>
+                <div class="stat-label">Problems</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">3h</div>
+                <div class="stat-label">Duration</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">★★</div>
+                <div class="stat-label">Difficulty</div>
+              </div>
+            </div>
+
+            <div class="contest-actions">
+              <a href="#" class="contest-btn btn-primary">Join Battle</a>
+              <a href="#" class="contest-btn btn-secondary">View Problems</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upcoming Contests -->
+      <div class="section">
+        <div class="section-header">
+          <h2 class="section-title">
+            🗓️ Upcoming Contests
+            <span class="section-count">6</span>
+          </h2>
+          <a href="#" class="view-all-btn">View All</a>
+        </div>
+
+        <div class="contest-grid">
+          <div class="contest-card">
+            <div class="contest-card-header">
+              <div>
+                <h3 class="contest-name">CodeForce Championship</h3>
+                <div class="contest-type official">Official</div>
+              </div>
+              <div class="status-upcoming">UPCOMING</div>
+            </div>
+
+            <div class="contest-info">
+              <div class="info-item">
+                <span class="info-icon">📅</span>
+                <span>Tomorrow, 8:00 PM</span>
+              </div>
+              <div class="info-item">
+                <span class="info-icon">⏳</span>
+                <span>2 hours</span>
+              </div>
+              <div class="info-item">
+                <span class="info-icon">👥</span>
+                <span>1,847 registered</span>
+              </div>
+              <div class="info-item">
+                <span class="info-icon">🏆</span>
+                <span>1000 XP + Trophy</span>
+              </div>
+            </div>
+
+            <div class="countdown">
+              <div class="countdown-item">
+                <div>23</div>
+                <div class="countdown-label">H</div>
+              </div>
+              <div class="countdown-item">
+                <div>45</div>
+                <div class="countdown-label">M</div>
+              </div>
+              <div class="countdown-item">
+                <div>12</div>
+                <div class="countdown-label">S</div>
+              </div>
+            </div>
+
+            <div class="contest-stats">
+              <div class="stat">
+                <div class="stat-value">6</div>
+                <div class="stat-label">Problems</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">2h</div>
+                <div class="stat-label">Duration</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">★★★★</div>
+                <div class="stat-label">Difficulty</div>
+              </div>
+            </div>
+
+            <div class="contest-actions">
+              <a href="#" class="contest-btn btn-primary">Register Now</a>
+              <a href="#" class="contest-btn btn-secondary">Set Reminder</a>
+            </div>
+          </div>
+
+          <div class="contest-card">
+            <div class="contest-card-header">
+              <div>
+                <h3 class="contest-name">Beginner's Quest</h3>
+                <div class="contest-type community">Community</div>
+              </div>
+              <div class="status-upcoming">UPCOMING</div>
+            </div>
+
+            <div class="contest-info">
+              <div class="info-item">
+                <span class="info-icon">📅</span>
+                <span>Sep 22, 2:00 PM</span>
+              </div>
+              <div class="info-item">
+                <span class="info-icon">⏳</span>
+                <span>1.5 hours</span>
+              </div>
+              <div class="info-item">
+                <span class="info-icon">👥</span>
+                <span>892 registered</span>
+              </div>
+              <div class="info-item">
+                <span class="info-icon">🏆</span>
+                <span>250 XP</span>
+              </div>
+            </div>
+
+            <div class="countdown">
+              <div class="countdown-item">
+                <div>1</div>
+                <div class="countdown-label">D</div>
+              </div>
+              <div class="countdown-item">
+                <div>15</div>
+                <div class="countdown-label">H</div>
+              </div>
+              <div class="countdown-item">
+                <div>30</div>
+                <div class="countdown-label">M</div>
+              </div>
+            </div>
+
+            <div class="contest-stats">
+              <div class="stat">
+                <div class="stat-value">3</div>
+                <div class="stat-label">Problems</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">1.5h</div>
+                <div class="stat-label">Duration</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">★</div>
+                <div class="stat-label">Difficulty</div>
+              </div>
+            </div>
+
+            <div class="contest-actions">
+              <a href="#" class="contest-btn btn-primary">Register Now</a>
+              <a href="#" class="contest-btn btn-secondary">Set Reminder</a>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Past Contests -->
+        <div class="section past">
+          <div class="section-header">
+            <h2 class="section-title">
+              📚 Past Contests
+              <span class="section-count">24</span>
+            </h2>
+            <a href="#" class="view-all-btn">View All</a>
+          </div>
+
+          <div class="contest-grid">
+            <div class="contest-card">
+              <div class="contest-card-header">
+                <div>
+                  <h3 class="contest-name">Weekly Challenge #46</h3>
+                  <div class="contest-type official">Official</div>
+                </div>
+                <div class="status-ended">ENDED</div>
+              </div>
+
+              <div class="contest-info">
+                <div class="info-item">
+                  <span class="info-icon">📅</span>
+                  <span>Sep 13, 2025</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-icon">👥</span>
+                  <span>3,421 participants</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-icon">🏆</span>
+                  <span>Your Rank: #247</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-icon">⭐</span>
+                  <span>Earned 350 XP</span>
+                </div>
+              </div>
+
+              <div class="contest-stats">
+                <div class="stat">
+                  <div class="stat-value">4/5</div>
+                  <div class="stat-label">Solved</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-value">2h 15m</div>
+                  <div class="stat-label">Time Taken</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-value">1247</div>
+                  <div class="stat-label">Score</div>
+                </div>
+              </div>
+
+              <div class="contest-actions">
+                <a href="#" class="contest-btn btn-secondary">View Solutions</a>
+                <a href="#" class="contest-btn btn-secondary">Practice</a>
+              </div>
+            </div>
+
+            <div class="contest-card">
+              <div class="contest-card-header">
+                <div>
+                  <h3 class="contest-name">Speed Coding Sprint</h3>
+                  <div class="contest-type community">Community</div>
+                </div>
+                <div class="status-ended">ENDED</div>
+              </div>
+
+              <div class="contest-info">
+                <div class="info-item">
+                  <span class="info-icon">📅</span>
+                  <span>Sep 10, 2025</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-icon">👥</span>
+                  <span>1,876 participants</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-icon">🏆</span>
+                  <span>Your Rank: #89</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-icon">⭐</span>
+                  <span>Earned 420 XP</span>
+                </div>
+              </div>
+
+              <div class="contest-stats">
+                <div class="stat">
+                  <div class="stat-value">3/3</div>
+                  <div class="stat-label">Solved</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-value">45m</div>
+                  <div class="stat-label">Time Taken</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-value">1650</div>
+                  <div class="stat-label">Score</div>
+                </div>
+              </div>
+
+              <div class="contest-actions">
+                <a href="#" class="contest-btn btn-secondary">View Solutions</a>
+                <a href="#" class="contest-btn btn-secondary">Practice</a>
+              </div>
+            </div>
+
+            <div class="contest-card">
+              <div class="contest-card-header">
+                <div>
+                  <h3 class="contest-name">Algorithm Masters Cup</h3>
+                  <div class="contest-type official">Official</div>
+                </div>
+                <div class="status-ended">ENDED</div>
+              </div>
+
+              <div class="contest-info">
+                <div class="info-item">
+                  <span class="info-icon">📅</span>
+                  <span>Sep 6, 2025</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-icon">👥</span>
+                  <span>4,203 participants</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-icon">🏆</span>
+                  <span>Not Participated</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-icon">⭐</span>
+                  <span>0 XP</span>
+                </div>
+              </div>
+
+              <div class="contest-stats">
+                <div class="stat">
+                  <div class="stat-value">-</div>
+                  <div class="stat-label">Solved</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-value">-</div>
+                  <div class="stat-label">Time</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-value">-</div>
+                  <div class="stat-label">Score</div>
+                </div>
+              </div>
+
+              <div class="contest-actions">
+                <a href="#" class="contest-btn btn-secondary">View Editorial</a>
+                <a href="#" class="contest-btn btn-secondary">Practice</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/contest/contest.js"></script>
+</body>
+</html>

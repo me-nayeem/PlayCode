@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - PlayCode</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="loginPage/login.css">
+    </style>
+</head>
+<body>
+
+     <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="#" class="logo">PlayCode</a>
+        <ul class="nav-menu">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/problems" class="nav-link">Problems</a></li>
+          <li><a href="/contest" class="nav-link">Contest</a></li>
+          <li><a href="#" class="nav-link">Play</a></li>
+          <li><a href="/leaderboard" class="nav-link">Leaderboard</a></li>
+          <li><a href="/store" class="nav-link">Store</a></li>
+        </ul>
+        <div class="auth-buttons">
+          <a href="/login" class="btn btn-login">Login</a>
+          <a href="/signup" class="btn btn-signup">Sign Up</a>
+        </div>
+        <i class="fa-solid fa-bars" id="bar"></i>
+      </div>
+    </nav>
+
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <div class="logo">PlayCode</div>
+                <p class="login-subtitle">Level up your coding journey</p>
+            </div>
+
+            <div class="error-message" id="errorMessage">
+                Invalid credentials. Please try again.
+            </div>
+
+            <div class="success-checkmark" id="successCheckmark"></div>
+            <div class="success-message" id="successMessage">Login successful! Redirecting...</div>
+
+            <form class="login-form" id="loginForm">
+                <div class="input-group">
+                    <label for="email" class="input-label">Email or Username</label>
+                    <input type="text" id="email" name="email" class="input-field" placeholder="Enter your email or username" required>
+                    <div class="input-icon"><i class="fa-solid fa-user"></i></div>
+                </div>
+
+                <div class="input-group">
+                    <label for="password" class="input-label">Password</label>
+                    <input type="password" id="password" name="password" class="input-field" placeholder="Enter your password" required>
+                    <div class="input-icon"><i class="fa-solid fa-lock"></i></div>
+                    <button type="button" class="password-toggle" onclick="togglePassword()"><i class="fa-solid fa-eye"></i></button>
+                </div>
+
+                <div class="form-options">
+                    <div class="remember-me">
+                        <div class="checkbox" id="rememberCheckbox" onclick="toggleCheckbox()"></div>
+                        <label class="remember-label" onclick="toggleCheckbox()">Remember me</label>
+                    </div>
+                    <a href="#" class="forgot-link">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="login-btn glow-effect" id="loginBtn">
+                    <div class="btn-loading" id="btnLoading"></div>
+                    <span id="btnText">Login to PlayCode</span>
+                </button>
+            </form>
+
+            <div class="divider">
+                <span>or continue with</span>
+            </div>
+
+            <div class="social-login">
+                <button class="social-btn" onclick="socialLogin('google')">
+                    <i class="fa-brands fa-google"></i>
+                    <span>Google</span>
+                </button>
+                <button class="social-btn" onclick="socialLogin('github')">
+                    <i class="fa-brands fa-github"></i>
+                    <span>GitHub</span>
+                </button>
+            </div>
+
+            <div class="signup-link">
+                Don't have an account? <a href="/signup" onclick="goToSignup()">Sign up here</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="/loginPage/login.js"></script>
+</body>
+</html>

@@ -15,25 +15,25 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="/home.css" />
+    <link rel="stylesheet" href="/home/home.css"/>
   </head>
 
   <body>
     <!-- Navigation -->
     <nav class="navbar">
       <div class="nav-container">
-        <a href="#" class="logo">PlayCode</a>
+        <a href="/" class="logo">PlayCode</a>
         <ul class="nav-menu">
-          <li><a href="#" class="nav-link active">Home</a></li>
-          <li><a href="#" class="nav-link">Problems</a></li>
-          <li><a href="#" class="nav-link">Contest</a></li>
+          <li><a href="/" class="nav-link active">Home</a></li>
+          <li><a href="/problems" class="nav-link">Problems</a></li>
+          <li><a href="/contest" class="nav-link">Contest</a></li>
           <li><a href="#" class="nav-link">Play</a></li>
-          <li><a href="#" class="nav-link">Leaderboard</a></li>
-          <li><a href="#" class="nav-link">Store</a></li>
+          <li><a href="/leaderboard" class="nav-link">Leaderboard</a></li>
+          <li><a href="/store" class="nav-link">Store</a></li>
         </ul>
         <div class="auth-buttons">
-          <a href="#" class="btn btn-login">Login</a>
-          <a href="#" class="btn btn-signup">Sign Up</a>
+          <a href="/login" class="btn btn-login">Login</a>
+          <a href="/signup" class="btn btn-signup">Sign Up</a>
         </div>
         <i class="fa-solid fa-bars" id="bar"></i>
       </div>
@@ -161,7 +161,7 @@
     </section>
 
     <!-- Services Section -->
-    <section class="services">
+    <section class="services" id="ser">
       <div class="container">
         <h2 class="section-title">Our Features</h2>
         <div class="services-grid">
@@ -269,6 +269,6 @@
       </div>
     </footer>
 
-    <script src="./home.js"></script>
+    <script src="/home/home.js"></script>
   </body>
 </html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up - PlayCode</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/signupPage/signup.css">
+  </head>
+  <body>
+   <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="/" class="logo">PlayCode</a>
+        <ul class="nav-menu">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/problems" class="nav-link">Problems</a></li>
+          <li><a href="/contest" class="nav-link">Contest</a></li>
+          <li><a href="#" class="nav-link">Play</a></li>
+          <li><a href="/leaderboard" class="nav-link">Leaderboard</a></li>
+          <li><a href="/store" class="nav-link">Store</a></li>
+        </ul>
+        <div class="auth-buttons">
+          <a href="/login" class="btn btn-login">Login</a>
+          <a href="/signup" class="btn btn-signup">Sign Up</a>
+        </div>
+        <i class="fa-solid fa-bars" id="bar"></i>
+      </div>
+    </nav>
+
+    <!-- Main container -->
+    <div class="container">
+      <div class="signup-wrapper">
+        <!-- Left side - Hero content -->
+        <div class="hero-content">
+          <h1 class="hero-title">Join the Elite</h1>
+          <p class="hero-subtitle">
+            Level up your coding skills and compete with the best programmers
+            worldwide
+          </p>
+
+          <ul class="hero-features">
+            <li>Epic coding battles and challenges</li>
+            <li>Real-time multiplayer competitions</li>
+            <li>Skill-based ranking system</li>
+            <li>Exclusive rewards and achievements</li>
+            <li>Community of passionate coders</li>
+          </ul>
+
+          <div class="code-preview">
+            <div style="color: #0099ff">function</div>
+            <span style="color: #00ff88">joinElite</span
+            ><span style="color: #c3c3c3">() {</span><br />
+            &nbsp;&nbsp;<span style="color: #0099ff">const</span>
+            <span style="color: #c3c3c3">player = </span
+            ><span style="color: #00ff88">"future_champion"</span
+            ><span style="color: #c3c3c3">;</span><br />
+            &nbsp;&nbsp;<span style="color: #0099ff">while</span>
+            <span style="color: #c3c3c3">(challenge.exists()) {</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #c3c3c3">player.</span
+            ><span style="color: #00ff88">solve</span
+            ><span style="color: #c3c3c3">() && player.</span
+            ><span style="color: #00ff88">levelUp</span
+            ><span style="color: #c3c3c3">();</span><br />
+            &nbsp;&nbsp;<span style="color: #c3c3c3">}</span><br />
+            <span style="color: #c3c3c3">} </span
+            ><span style="color: #666">// Ready to conquer!</span>
+          </div>
+        </div>
+
+        <!-- Right side - Signup form -->
+        <div class="signup-form">
+          <h2 class="form-title">Create Account</h2>
+          <p class="form-subtitle">Start your coding journey today</p>
+
+          <form class="signup-card">
+            <div class="form-group">
+              <label class="form-label" for="firstName">First Name</label>
+              <input
+                type="text"
+                id="firstName"
+                class="form-input"
+                placeholder="Enter first name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="lastName">Last Name</label>
+              <input
+                type="text"
+                id="lastName"
+                class="form-input"
+                placeholder="Enter last name"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="username">Username</label>
+              <input
+                type="text"
+                id="username"
+                class="form-input"
+                placeholder="Choose your gamer tag"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                class="form-input"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                class="form-input"
+                placeholder="Create a strong password"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="confirmPassword"
+                >Confirm Password</label
+              >
+              <input
+                type="password"
+                id="confirmPassword"
+                class="form-input"
+                placeholder="Confirm your password"
+                required
+              />
+            </div>
+
+            <button type="submit" class="signup-btn">Join PlayCode</button>
+          </form>
+
+          <div class="social-login">
+            <div class="social-divider">
+              <span>or continue with</span>
+            </div>
+            <div class="social-buttons">
+              <a href="#" class="social-btn"> <span>🐙</span> GitHub </a>
+              <a href="#" class="social-btn"> <span>🌐</span> Google </a>
+            </div>
+          </div>
+
+          <div class="form-footer">
+            Already have an account? <a href="/login">Sign in here</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/signupPage/signup.js"></script>
+  </body>
+</html>

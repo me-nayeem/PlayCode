@@ -95,17 +95,15 @@ document.querySelectorAll(".achievement-item").forEach((item) => {
   item.addEventListener("mouseenter", function () {
     this.style.transform = "translateX(10px) scale(1.02)";
   });
-
   item.addEventListener("mouseleave", function () {
     this.style.transform = "translateX(0) scale(1)";
   });
 });
 
-// Quick action button handlers
+
 document
   .querySelector(".action-button.primary")
   .addEventListener("click", function () {
-    // Simulate quick battle
     this.innerHTML = "<span>⏳</span><span>Finding Opponent...</span>";
     setTimeout(() => {
       this.innerHTML = "<span>🎮</span><span>Quick Battle</span>";
@@ -115,6 +113,15 @@ document
 document
   .querySelector(".action-button.secondary")
   .addEventListener("click", function () {
-    // Simulate navigation to full stats
     console.log("Navigating to full statistics page...");
   });
+
+
+  window.addEventListener("scroll", () => {
+  const navbar = document.querySelector(".navbar");
+  if (window.scrollY > 50) {
+    navbar.style.background = "transparent";
+  } else {
+    navbar.style.background = "rgba(26, 26, 26, 0.95)";
+  }
+});

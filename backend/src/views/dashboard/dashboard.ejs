@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - PlayCode</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/dashboard.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="/" class="logo">PlayCode</a>
+        <ul class="nav-menu">
+          <li><a href="#" class="nav-link active">Home</a></li>
+          <li><a href="#" class="nav-link">Problems</a></li>
+          <li><a href="#" class="nav-link">Contest</a></li>
+          <li><a href="#" class="nav-link">Play</a></li>
+          <li><a href="#" class="nav-link">Leaderboard</a></li>
+          <li><a href="#" class="nav-link">Store</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <div class="coin-balance">
+            <div class="coin-icon">₽</div>
+            <span>2,847</span>
+          </div>
+
+          <div class="xp-display">
+            <span>⚡</span>
+            <span>15,742 XP</span>
+          </div>
+
+          <div class="notifications">
+            <div class="notification-bell"><i class="fa-solid fa-bell"></i></div>
+            <div class="notification-badge">3</div>
+          </div>
+
+          <div class="profile-dropdown">
+            <div class="profile-trigger">
+              <img
+                src="https://api.dicebear.com/7.x/avataaars/svg?seed=nayeem"
+                alt="Profile"
+                class="profile-avatar"
+              />
+              <span><i class="fa-solid fa-angle-down"></i></span>
+            </div>
+          </div>
+        </div>
+        <i class="fa-solid fa-bars" id="bar"></i>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container">
+        <!-- Hero Section -->
+        <section class="hero-section fade-in">
+          <div class="welcome-header">
+            <div class="welcome-text">
+              <h1>Welcome back, Nayeem <i class="fa-solid fa-hands-clapping"></i></h1>
+              <p style="color: var(--text-secondary); font-size: 1.1rem">
+                Ready to level up your coding skills today?
+              </p>
+            </div>
+
+            <div class="streak-info">
+              <div class="streak-flame"><i class="fa-solid fa-fire"></i></div>
+              <div class="streak-details">
+                <h3>5-Day Streak!</h3>
+                <div class="streak-xp">+10 XP earned today</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Stats -->
+          <div class="quick-stats">
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fa-solid fa-square-poll-vertical"></i></div>
+              <div class="stat-value">247</div>
+              <div class="stat-label">Problems Solved</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fa-solid fa-trophy"></i></div>
+              <div class="stat-value">18</div>
+              <div class="stat-label">Contests Joined</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fa-solid fa-gamepad"></i></div>
+              <div class="stat-value">89</div>
+              <div class="stat-label">Games Played</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fa-solid fa-star"></i></div>
+              <div class="stat-value">12</div>
+              <div class="stat-label">Badges Earned</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+          <!-- Left Column - Analytics -->
+          <div class="analytics-section fade-in">
+            <div class="chart-grid">
+              <!-- Problems Solved Chart -->
+              <div class="chart-card" onclick="openDetailedStats('problems')">
+                <h3 class="chart-title">Problems Solved</h3>
+                <div class="semi-circle-chart">
+                  <svg class="chart-svg" viewBox="0 0 200 100"></svg>
+                  <div class="chart-center-text">
+                    <div class="chart-percentage">247</div>
+                    <div class="chart-subtitle">Total</div>
+                  </div>
+                </div>
+                <div class="chart-legend">
+                  <div class="legend-item">
+                    <div class="legend-color" style="background: #00ff88"></div>
+                    <span>Easy (180)</span>
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-color" style="background: #ffa500"></div>
+                    <span>Medium (52)</span>
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-color" style="background: #ff4757"></div>
+                    <span>Hard (15)</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Contest Participation Chart -->
+              <div class="chart-card" onclick="openDetailedStats('contests')">
+                <h3 class="chart-title">Contest Performance</h3>
+                <div class="semi-circle-chart">
+                  <svg class="chart-svg" viewBox="0 0 200 100"></svg>
+                  <div class="chart-center-text">
+                    <div class="chart-percentage">72%</div>
+                    <div class="chart-subtitle">Win Rate</div>
+                  </div>
+                </div>
+                <div class="chart-legend">
+                  <div class="legend-item">
+                    <div class="legend-color" style="background: #8b5cf6"></div>
+                    <span>18 Contests</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Games Played Chart -->
+              <div class="chart-card" onclick="openDetailedStats('games')">
+                <h3 class="chart-title">Game Battles</h3>
+                <div class="semi-circle-chart">
+                  <svg class="chart-svg" viewBox="0 0 200 100"></svg>
+                  <div class="chart-center-text">
+                    <div class="chart-percentage">89</div>
+                    <div class="chart-subtitle">Battles</div>
+                  </div>
+                </div>
+                <div class="chart-legend">
+                  <div class="legend-item">
+                    <div class="legend-color" style="background: #14b8a6"></div>
+                    <span>65 Wins</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Skill Progress Chart -->
+              <div class="chart-card" onclick="openDetailedStats('skills')">
+                <h3 class="chart-title">Skill Progress</h3>
+                <div class="semi-circle-chart">
+                  <svg class="chart-svg" viewBox="0 0 200 100"></svg>
+                  <div class="chart-center-text">
+                    <div class="chart-percentage">68%</div>
+                    <div class="chart-subtitle">Complete</div>
+                  </div>
+                </div>
+                <div class="chart-legend">
+                  <div class="legend-item">
+                    <div class="legend-color" style="background: #f97316"></div>
+                    <span>Level 12</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Trends Chart -->
+            <div class="trends-chart">
+              <div class="trends-header">
+                <h3 class="chart-title">Performance Trends</h3>
+                <div class="trends-tabs">
+                  <button class="trends-tab active">Weekly</button>
+                  <button class="trends-tab">Monthly</button>
+                </div>
+              </div>
+              <div class="chart-container">
+                <canvas id="trendsChart" width="400" height="200"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column - Quick Actions -->
+          <div class="actions-section fade-in">
+            <div class="actions-grid">
+              <div class="action-card" onclick="startPractice()">
+                <div class="action-icon">📚</div>
+                <div class="action-title">Start Practice</div>
+                <div class="action-description">
+                  Solve problems and improve your skills
+                </div>
+              </div>
+
+              <div class="action-card" onclick="joinContest()">
+                <div class="action-icon">🏆</div>
+                <div class="action-title">Join Contest</div>
+                <div class="action-description">Compete with other coders</div>
+              </div>
+
+              <div class="action-card" onclick="playGame()">
+                <div class="action-icon">🎮</div>
+                <div class="action-title">Play Game Mode</div>
+                <div class="action-description">
+                  Challenge friends in coding battles
+                </div>
+              </div>
+            </div>
+
+            <!-- Contest Countdown -->
+            <div class="contest-card">
+              <div class="contest-title">🚀 Weekly Challenge</div>
+              <div class="countdown">
+                <div class="countdown-item">
+                  <span class="countdown-number">02</span>
+                  <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                  <span class="countdown-number">14</span>
+                  <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                  <span class="countdown-number">32</span>
+                  <span class="countdown-label">Minutes</span>
+                </div>
+              </div>
+              <button class="register-btn" onclick="registerContest()">
+                Register Now
+              </button>
+            </div>
+
+            <!-- Daily Challenge -->
+            <div class="daily-challenge">
+              <div class="challenge-header">
+                <div class="challenge-title">💎 Daily Challenge</div>
+                <div class="challenge-reward">+50 XP</div>
+              </div>
+              <div class="challenge-problem">Two Sum with Twist</div>
+              <div class="challenge-difficulty">Easy • Array • Hash Table</div>
+              <button class="solve-btn" onclick="solveDaily()">
+                Solve Challenge
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Sections -->
+        <div class="bottom-sections fade-in">
+          <!-- Activity Feed -->
+          <div class="activity-feed">
+            <div class="section-header">
+              <h3 class="section-title">Recent Activity</h3>
+              <a href="#" class="view-all-link">View All</a>
+            </div>
+
+            <div class="activity-item">
+              <div class="activity-icon" style="background: var(--success)">
+                ✓
+              </div>
+              <div class="activity-content">
+                <div class="activity-text">
+                  Solved <strong>Binary Tree Inorder Traversal</strong>
+                </div>
+                <div class="activity-time">2 hours ago</div>
+              </div>
+            </div>
+
+            <div class="activity-item">
+              <div class="activity-icon" style="background: var(--warning)">
+                🏆
+              </div>
+              <div class="activity-content">
+                <div class="activity-text">
+                  Ranked #47 in <strong>Weekly Contest 234</strong>
+                </div>
+                <div class="activity-time">1 day ago</div>
+              </div>
+            </div>
+
+            <div class="activity-item">
+              <div class="activity-icon" style="background: var(--purple)">
+                🎮
+              </div>
+              <div class="activity-content">
+                <div class="activity-text">
+                  Won battle against <strong>Sarah Chen</strong>
+                </div>
+                <div class="activity-time">2 days ago</div>
+              </div>
+            </div>
+
+            <div class="activity-item">
+              <div class="activity-icon" style="background: var(--gold)">
+                🏅
+              </div>
+              <div class="activity-content">
+                <div class="activity-text">
+                  Earned <strong>Speed Demon</strong> badge
+                </div>
+                <div class="activity-time">3 days ago</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recommendations -->
+          <div class="recommendations">
+            <div class="section-header">
+              <h3 class="section-title">Recommended for You</h3>
+              <a href="#" class="view-all-link">View More</a>
+            </div>
+
+            <div class="recommendation-item">
+              <div class="recommendation-header">
+                <div class="recommendation-title">
+                  Dynamic Programming Track
+                </div>
+                <div style="color: var(--accent-color); font-size: 0.8rem">
+                  75% Complete
+                </div>
+              </div>
+              <div class="progress-bar">
+                <div
+                  class="progress-fill animate-progress"
+                  style="width: 75%"
+                ></div>
+              </div>
+              <div class="progress-text">15 of 20 problems solved</div>
+            </div>
+
+            <div class="recommendation-item">
+              <div class="recommendation-header">
+                <div class="recommendation-title">Graph Algorithms Mastery</div>
+                <div style="color: var(--warning); font-size: 0.8rem">
+                  40% Complete
+                </div>
+              </div>
+              <div class="progress-bar">
+                <div
+                  class="progress-fill animate-progress"
+                  style="width: 40%"
+                ></div>
+              </div>
+              <div class="progress-text">8 of 20 problems solved</div>
+            </div>
+
+            <div class="recommendation-item">
+              <div class="recommendation-header">
+                <div class="recommendation-title">Binary Search Deep Dive</div>
+                <div style="color: var(--danger); font-size: 0.8rem">NEW</div>
+              </div>
+              <div class="progress-bar">
+                <div
+                  class="progress-fill animate-progress"
+                  style="width: 0%"
+                ></div>
+              </div>
+              <div class="progress-text">0 of 15 problems solved</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="./dashboard.js"></script>
+  </body>
+</html>

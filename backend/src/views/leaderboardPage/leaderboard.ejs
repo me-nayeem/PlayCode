@@ -15,7 +15,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="/leaderboard.css" />
+    <link rel="stylesheet" href="/leaderboardPage/leaderboard.css" />
   </head>
   <body>
     <!-- Navigation -->
@@ -23,16 +23,16 @@
       <div class="nav-container">
         <a href="#" class="logo">PlayCode</a>
         <ul class="nav-menu">
-          <li><a href="#" class="nav-link">Home</a></li>
-          <li><a href="#" class="nav-link">Problems</a></li>
-          <li><a href="#" class="nav-link">Contest</a></li>
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/problems" class="nav-link">Problems</a></li>
+          <li><a href="/contest" class="nav-link">Contest</a></li>
           <li><a href="#" class="nav-link">Play</a></li>
-          <li><a href="#" class="nav-link">Leaderboard</a></li>
-          <li><a href="#" class="nav-link">Store</a></li>
+          <li><a href="/leaderboard" class="nav-link active">Leaderboard</a></li>
+          <li><a href="/store" class="nav-link">Store</a></li>
         </ul>
         <div class="auth-buttons">
-          <a href="#" class="btn btn-login">Login</a>
-          <a href="#" class="btn btn-signup">Sign Up</a>
+          <a href="/login" class="btn btn-login">Login</a>
+          <a href="/signup" class="btn btn-signup">Sign Up</a>
         </div>
         <i class="fa-solid fa-bars" id="bar"></i>
       </div>
@@ -301,17 +301,17 @@
         <!-- Control Bar -->
         <div class="control-bar fade-in">
           <div class="tabs">
-            <button class="tab active" data-tab="global">🌍 Global</button>
-            <button class="tab" data-tab="friends">👥 Friends</button>
-            <button class="tab" data-tab="university">🎓 University</button>
-            <button class="tab" data-tab="tag">🏷️ By Tag</button>
+            <button class="tab active" data-tab="global"><i class="fa-solid fa-earth-africa"></i> Global</button>
+            <button class="tab" data-tab="friends"><i class="fa-solid fa-users"></i> Friends</button>
+            <button class="tab" data-tab="university"><i class="fa-solid fa-graduation-cap"></i> University</button>
+            <button class="tab" data-tab="tag"><i class="fa-solid fa-tag"></i> By Tag</button>
           </div>
 
           <div class="filters">
             <input
               type="text"
               class="search-box"
-              placeholder="🔍 Search players..."
+              placeholder="Search players..."
             />
             <select class="filter-select" id="timeRange">
               <option value="all">All Time</option>
@@ -581,6 +581,6 @@
         </div>
       </div>
     </main>
-    <script src="./leaderboard.js"></script>
+    <script src="/leaderboardPage/leaderboard.js"></script>
   </body>
 </html>

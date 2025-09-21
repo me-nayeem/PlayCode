@@ -55,7 +55,7 @@ function openModal(mode, card = null) {
                 `;
 
     if (category === "swag") {
-      // show shipping form
+      // shipping form
       modalBody.innerHTML += `
                         <div style="margin-top:1rem;">
                             <label style="display:block;color:var(--text-secondary);margin-bottom:6px">Shipping Address</label>
@@ -199,7 +199,7 @@ modal.addEventListener("click", (e) => {
   if (e.target === modal) closeModal();
 });
 
-// Quick preview when clicking card (optional)
+// Quick preview when clicking card
 productCards.forEach((card) => {
   card.addEventListener("dblclick", () => openModal("item", card));
 });
@@ -207,4 +207,14 @@ productCards.forEach((card) => {
 // Accessibility: ESC closes modal
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && modal.classList.contains("active")) closeModal();
+});
+
+
+window.addEventListener("scroll", () => {
+  const navbar = document.querySelector(".navbar");
+  if (window.scrollY > 50) {
+    navbar.style.background = "transparent";
+  } else {
+    navbar.style.background = "rgba(26, 26, 26, 0.95)";
+  }
 });
