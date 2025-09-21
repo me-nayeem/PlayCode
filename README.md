@@ -294,16 +294,49 @@ The goal is to create a **unique, learner-friendly coding experience** with feat
         ├── 📄 README.md # Project documentation
 
 ---
+## This is just the small part of this project.(those images is not cover all the content of this web app)
 
 ## Home:  
 
-(It might seem a bit dense in the mockup, but the actual page will feel clean, fresh, and easy to navigate.)
 <img src="backend/assets/images/PlayCodeHome.png" alt="PlayCode Home" width="750"/>
 
-## Dashboard:
+---
 
-(It might seem a bit dense in the mockup, but the actual page will feel clean, fresh, and easy to navigate.)
-<img src="backend/assets/images/Dashboard.png" alt="PlayCode Dashboard" width="750"/>
+## Problem Page:  
+
+<img src="backend/assets/images/Problem page.png" alt="PlayCode Home" width="750"/>
+
+---
+
+## Contest Page:  
+
+<img src="backend/assets/images/contest page.png" alt="PlayCode Home" width="750"/>
+
+---
+
+## LeaderBoard Page:  
+
+<img src="backend/assets/images/leaderboard page.png" alt="PlayCode Home" width="750"/>
+
+---
+
+## Store Page:  
+
+<img src="backend/assets/images/store page.png" alt="PlayCode Home" width="750"/>
+
+---
+
+## Login Page:  
+
+<img src="backend/assets/images/login page.png" alt="PlayCode Home" width="750"/>
+
+---
+
+## SignUp Page:  
+
+<img src="backend/assets/images/signup page.png" alt="PlayCode Home" width="750"/>
+
+---
 
 # 🤝 Contributing
 
