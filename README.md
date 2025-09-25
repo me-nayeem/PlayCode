@@ -92,7 +92,7 @@ The goal is to create a **unique, learner-friendly coding experience** with feat
 
 ### Version 2 — Authentication & User Profiles
 
-**Goal:** Establish identity and trust; required for almost all product features.
+**Goal:** Establish identity and trust.
 
       1. Email/password signup & login, email verification, password reset.
       
