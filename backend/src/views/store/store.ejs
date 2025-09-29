@@ -30,10 +30,16 @@
           <li><a href="/leaderboard" class="nav-link">Leaderboard</a></li>
           <li><a href="/store" class="nav-link active">Store</a></li>
         </ul>
+        <%if(!isLogin) {%>
         <div class="auth-buttons">
           <a href="/login" class="btn btn-login">Login</a>
           <a href="/signup" class="btn btn-signup">Sign Up</a>
         </div>
+        <%} else {%>
+          <div class="auth-buttons">
+          <a href="/dashboard" class="btn btn-signup">DashBoard</a>
+        </div>
+        <%}%>
         <i class="fa-solid fa-bars" id="bar"></i>
       </div>
     </nav>

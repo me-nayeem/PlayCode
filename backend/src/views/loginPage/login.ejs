@@ -18,9 +18,9 @@
 <body>
 
      <!-- Navigation -->
-    <nav class="navbar">
+   <nav class="navbar">
       <div class="nav-container">
-        <a href="#" class="logo">PlayCode</a>
+        <a href="/" class="logo">PlayCode</a>
         <ul class="nav-menu">
           <li><a href="/" class="nav-link">Home</a></li>
           <li><a href="/problems" class="nav-link">Problems</a></li>
@@ -29,10 +29,16 @@
           <li><a href="/leaderboard" class="nav-link">Leaderboard</a></li>
           <li><a href="/store" class="nav-link">Store</a></li>
         </ul>
+        <%if(!isLogin) {%>
         <div class="auth-buttons">
           <a href="/login" class="btn btn-login">Login</a>
           <a href="/signup" class="btn btn-signup">Sign Up</a>
         </div>
+        <%} else {%>
+          <div class="auth-buttons">
+          <a href="/dashboard" class="btn btn-signup">DashBoard</a>
+        </div>
+        <%}%>
         <i class="fa-solid fa-bars" id="bar"></i>
       </div>
     </nav>
@@ -51,10 +57,15 @@
             <div class="success-checkmark" id="successCheckmark"></div>
             <div class="success-message" id="successMessage">Login successful! Redirecting...</div>
 
-            <form class="login-form" id="loginForm">
+            <form action="/login" class="login-form" id="loginForm" method="POST">
+                <% if(typeof error !== 'undefined' && error && error.trim() !== '') { %>
+                    <div style="color: red; background-color: white; padding: 0.4rem; font-weight: 500; margin-bottom: 1rem; border-radius: 4px; border: 1px solid #ffcdd2;">
+                        <%= error %>
+                    </div>
+                <% } %>
                 <div class="input-group">
-                    <label for="email" class="input-label">Email or Username</label>
-                    <input type="text" id="email" name="email" class="input-field" placeholder="Enter your email or username" required>
+                    <label for="email" class="input-label">Email</label>
+                    <input type="text" id="email" name="email" class="input-field" placeholder="Enter your email" value="<%= output.email %>" required>
                     <div class="input-icon"><i class="fa-solid fa-user"></i></div>
                 </div>
 
@@ -70,7 +81,7 @@
                         <div class="checkbox" id="rememberCheckbox" onclick="toggleCheckbox()"></div>
                         <label class="remember-label" onclick="toggleCheckbox()">Remember me</label>
                     </div>
-                    <a href="#" class="forgot-link">Forgot password?</a>
+                    <a href="/forgot-password" class="forgot-link">Forgot password?</a>
                 </div>
 
                 <button type="submit" class="login-btn glow-effect" id="loginBtn">
@@ -84,19 +95,14 @@
             </div>
 
             <div class="social-login">
-                <button class="social-btn" onclick="socialLogin('google')">
-                    <i class="fa-brands fa-google"></i>
-                    <span>Google</span>
-                </button>
-                <button class="social-btn" onclick="socialLogin('github')">
-                    <i class="fa-brands fa-github"></i>
-                    <span>GitHub</span>
-                </button>
+              <a href="/auth/github" class="social-btn"> GitHub </a>
+              <a href="/auth/google" class="social-btn"> Google </a>
+           </div>
+           <div class="signup-link">
+               Don't have an account? <a href="/signup" onclick="goToSignup()">Sign up here</a>
+           </div>
             </div>
-
-            <div class="signup-link">
-                Don't have an account? <a href="/signup" onclick="goToSignup()">Sign up here</a>
-            </div>
+            
         </div>
     </div>
 

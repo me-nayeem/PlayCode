@@ -18,50 +18,6 @@
             checkbox.classList.toggle('checked');
         }
 
-        // Handle form submission
-        function handleLogin(event) {
-            event.preventDefault();
-            
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const loginBtn = document.getElementById('loginBtn');
-            const btnText = document.getElementById('btnText');
-            const btnLoading = document.getElementById('btnLoading');
-            const errorMessage = document.getElementById('errorMessage');
-            const successCheckmark = document.getElementById('successCheckmark');
-            const successMessage = document.getElementById('successMessage');
-            const loginForm = document.getElementById('loginForm');
-            errorMessage.classList.remove('show');
-
-            // Show loading state
-            loginBtn.disabled = true;
-            btnText.textContent = 'Logging in...';
-            btnLoading.style.display = 'inline-block';
-
-            // Simulate API call
-            setTimeout(() => {
-                if (email && password) {
-                    loginForm.style.display = 'none';
-                    successCheckmark.style.display = 'block';
-                    successMessage.style.display = 'block';
-                    successCheckmark.style.animation = 'fadeIn 0.5s ease-out';
-                    successMessage.style.animation = 'fadeIn 0.5s ease-out 0.2s both';
-                    setTimeout(() => {
-                        console.log('Redirecting to dashboard...');
-                    }, 2000);
-                } else {
-                    errorMessage.classList.add('show');
-                    loginBtn.disabled = false;
-                    btnText.textContent = 'Login to PlayCode';
-                    btnLoading.style.display = 'none';
-                    loginBtn.style.animation = 'shake 0.5s ease-in-out';
-                    setTimeout(() => {
-                        loginBtn.style.animation = '';
-                    }, 500);
-                }
-            }, 1500);
-        }
-
         // Input field focus effects
         function addInputEffects() {
             const inputFields = document.querySelectorAll('.input-field');

@@ -15,10 +15,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="/signupPage/signup.css">
+    <link rel="stylesheet" href="/signupPage/signup.css" />
   </head>
   <body>
-   <!-- Navigation -->
+    <!-- Navigation -->
     <nav class="navbar">
       <div class="nav-container">
         <a href="/" class="logo">PlayCode</a>
@@ -30,10 +30,16 @@
           <li><a href="/leaderboard" class="nav-link">Leaderboard</a></li>
           <li><a href="/store" class="nav-link">Store</a></li>
         </ul>
+        <%if(!isLogin) {%>
         <div class="auth-buttons">
           <a href="/login" class="btn btn-login">Login</a>
           <a href="/signup" class="btn btn-signup">Sign Up</a>
         </div>
+        <%} else {%>
+        <div class="auth-buttons">
+          <a href="/dashboard" class="btn btn-signup">DashBoard</a>
+        </div>
+        <%}%>
         <i class="fa-solid fa-bars" id="bar"></i>
       </div>
     </nav>
@@ -83,14 +89,35 @@
           <h2 class="form-title">Create Account</h2>
           <p class="form-subtitle">Start your coding journey today</p>
 
-          <form class="signup-card">
+          <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
+          <div
+            style="
+              color: red;
+              background-color: white;
+              padding: 0.4rem;
+              margin-bottom: 0.5rem;
+              font-weight: 600;
+              list-style: none;
+            "
+          >
+            <ul>
+              <% errors.forEach(err => { %>
+              <li><%= err.msg %></li>
+              <% }); %>
+            </ul>
+          </div>
+          <% } %>
+
+          <form action="/signup" class="signup-card" method="POST">
             <div class="form-group">
               <label class="form-label" for="firstName">First Name</label>
               <input
                 type="text"
                 id="firstName"
+                name="firstName"
                 class="form-input"
                 placeholder="Enter first name"
+                value="<%= oldInput.firstName %>"
                 required
               />
             </div>
@@ -99,8 +126,10 @@
               <input
                 type="text"
                 id="lastName"
+                name="lastName"
                 class="form-input"
                 placeholder="Enter last name"
+                value="<%= oldInput.lastName %>"
                 required
               />
             </div>
@@ -110,8 +139,10 @@
               <input
                 type="text"
                 id="username"
+                name="username"
                 class="form-input"
                 placeholder="Choose your gamer tag"
+                value="<%= oldInput.username %>"
                 required
               />
             </div>
@@ -121,8 +152,10 @@
               <input
                 type="email"
                 id="email"
+                name="email"
                 class="form-input"
                 placeholder="Enter your email"
+                value="<%= oldInput.email %>"
                 required
               />
             </div>
@@ -132,6 +165,7 @@
               <input
                 type="password"
                 id="password"
+                name="password"
                 class="form-input"
                 placeholder="Create a strong password"
                 required
@@ -145,6 +179,7 @@
               <input
                 type="password"
                 id="confirmPassword"
+                name="confirmPassword"
                 class="form-input"
                 placeholder="Confirm your password"
                 required
@@ -159,8 +194,9 @@
               <span>or continue with</span>
             </div>
             <div class="social-buttons">
-              <a href="#" class="social-btn"> <span>🐙</span> GitHub </a>
-              <a href="#" class="social-btn"> <span>🌐</span> Google </a>
+              <a href="/auth/github" class="social-btn"> GitHub </a>
+
+              <a href="/auth/google" class="social-btn"> Google </a>
             </div>
           </div>
 
