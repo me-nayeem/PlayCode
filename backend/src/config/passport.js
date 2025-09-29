@@ -1,13 +1,4 @@
 require('dotenv').config();
-
-console.log('=== DEBUGGING OAUTH CREDENTIALS ===');
-console.log('GOOGLE_CLIENT_ID:', process.env.GOOGLE_CLIENT_ID);
-console.log('GOOGLE_CLIENT_SECRET:', process.env.GOOGLE_CLIENT_SECRET ? 'SET' : 'NOT SET');
-console.log('GITHUB_CLIENT_ID:', process.env.GITHUB_CLIENT_ID);
-console.log('GITHUB_CLIENT_SECRET:', process.env.GITHUB_CLIENT_SECRET ? 'SET' : 'NOT SET');
-console.log('CALLBACK_URL:', process.env.CALLBACK_URL);
-console.log('=====================================');
-
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const GitHubStrategy = require('passport-github2').Strategy;
