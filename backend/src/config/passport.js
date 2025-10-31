@@ -75,7 +75,7 @@ passport.use(new GoogleStrategy({
     
     if (user) {
       user.googleId = profile.id;
-      user.avatar = profile.photos[0].value;
+      user.avatar = profile.photos && profile.photos[0] ? profile.photos[0].value : null;
       await user.save();
       return done(null, user);
     }
@@ -85,8 +85,8 @@ passport.use(new GoogleStrategy({
       firstName: profile.name.givenName,
       lastName: profile.name.familyName,
       email: profile.emails[0].value,
-      username: profile.emails[0].value.split('@')[0], // Generate username from email
-      avatar: profile.photos[0].value,
+      username: profile.emails[0].value.split('@')[0], 
+      avatar: profile.photos && profile.photos[0] ? profile.photos[0].value : null,
       provider: 'google',
       isVerified: true
     });
@@ -94,7 +94,8 @@ passport.use(new GoogleStrategy({
     await user.save();
     done(null, user);
   } catch (error) {
-    done(error, null);
+    console.error('Google Strategy Error:', error);
+    done(error);
   }
 }));
 
@@ -116,7 +117,7 @@ passport.use(new GitHubStrategy({
       user = await User.findOne({ email });
       if (user) {
         user.githubId = profile.id;
-        user.avatar = profile.photos[0].value;
+        user.avatar = profile.photos && profile.photos[0] ? profile.photos[0].value : null;
         await user.save();
         return done(null, user);
       }
@@ -128,7 +129,7 @@ passport.use(new GitHubStrategy({
       lastName: '',
       email: email || `${profile.username}@github.local`,
       username: profile.username,
-      avatar: profile.photos[0].value,
+      avatar: profile.photos && profile.photos[0] ? profile.photos[0].value : null,
       provider: 'github',
       isVerified: true
     });
@@ -136,7 +137,8 @@ passport.use(new GitHubStrategy({
     await user.save();
     done(null, user);
   } catch (error) {
-    done(error, null);
+    console.error('GitHub Strategy Error:', error);
+    done(error);
   }
 }));
 

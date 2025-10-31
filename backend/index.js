@@ -2,10 +2,16 @@ require("dotenv").config();
 
 const path = require("path");
 const express = require("express");
-const passport = require('./src/config/passport');
+const passport = require("./src/config/passport");
 const mongoose = require("mongoose");
 const session = require("express-session");
 const MongoDBStore = require("connect-mongodb-session")(session);
+
+const store = new MongoDBStore({
+  uri: process.env.DB_URL,
+  collection: "sessions",
+});
+
 
 const app = express();
 
@@ -18,14 +24,6 @@ app.use((req, res, next) => {
   next();
 });
 
-const store = new MongoDBStore({
-  uri: process.env.DB_URL,
-  collection: "sessions",
-});
-
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-app.use(express.static(path.join("./src/public")));
 
 app.use(
   session({
@@ -34,12 +32,17 @@ app.use(
     saveUninitialized: false,
     store,
     cookie: {
-      secure: false,
+      secure: process.env.NODE_ENV === "production",
       httpOnly: true,
+      sameSite: "strict",
       maxAge: 1000 * 60 * 60 * 24,
     },
   })
 );
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static(path.join("./src/public")));
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -90,6 +93,15 @@ app.use((req, res, next) => {
   res.json({ message: "page not found" });
 });
 
+app.use((err, req, res, next) => {
+  console.error('Error:', err);
+  res.status(err.status || 500).json({
+    error: process.env.NODE_ENV === 'production' 
+      ? 'Internal Server Error' 
+      : err.message
+  });
+});
+
 const port = process.env.PORT || 5000;
 const DBpath = process.env.DB_URL;
 mongoose
@@ -101,5 +113,5 @@ mongoose
     });
   })
   .catch((err) => {
-    console.log("error while connect mongodb, ", err);
+    console.log("error while connect mongodb/server, ", err);
   });
